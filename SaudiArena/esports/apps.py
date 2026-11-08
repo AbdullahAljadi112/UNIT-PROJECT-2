@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class EsportConfig(AppConfig):
-    name = 'esport'
+    name = 'esports'
