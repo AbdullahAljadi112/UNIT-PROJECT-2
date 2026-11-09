@@ -1,0 +1,83 @@
+
+{% extends "esports/base.html" %}
+
+{% block title %}Achievements | Saudi Arena{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+    <div class="container">
+        <span class="section-label">CELEBRATING SUCCESS</span>
+        <h1>ESPORTS ACHIEVEMENTS</h1>
+        <p>Celebrating milestones and memorable competitive moments.</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+
+        <div class="section-header">
+            <div>
+                <span class="section-label">HALL OF ACHIEVEMENTS</span>
+                <h2>Moments of Glory</h2>
+                <p>Explore the achievements featured on Saudi Arena.</p>
+            </div>
+        </div>
+
+        <div class="teams-directory-grid">
+
+            {% for achievement in achievements %}
+
+            <article class="directory-team-card">
+
+                <div class="directory-team-logo">
+
+                    {% if achievement.image_url %}
+                        <img
+                            src="{{ achievement.image_url }}"
+                            alt="{{ achievement.title }}"
+                            loading="lazy"
+                        >
+                    {% else %}
+                        <span>★</span>
+                    {% endif %}
+
+                </div>
+
+                <div class="directory-team-content">
+
+                    <span class="directory-team-label">
+                        ACHIEVEMENT
+                    </span>
+
+                    <h3>{{ achievement.title }}</h3>
+
+                    {% if achievement.year %}
+                        <p>Year: {{ achievement.year }}</p>
+                    {% endif %}
+
+                    {% if achievement.team %}
+                        <p>Team: {{ achievement.team }}</p>
+                    {% endif %}
+
+                    <p>{{ achievement.description }}</p>
+
+                </div>
+
+            </article>
+
+            {% empty %}
+
+            <div class="teams-empty-state">
+                <h3>Achievements Coming Soon</h3>
+                <p>Competitive achievements will be added soon.</p>
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

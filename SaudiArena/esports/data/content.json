@@ -1,12 +1,43 @@
 
 {
+    "about": {
+        "eyebrow": "BEYOND THE GAME",
+        "title": "WELCOME TO SAUDI ARENA",
+        "subtitle": "A digital destination celebrating the energy, talent, and ambition of Saudi esports.",
+        "hero_image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1600&q=85",
+        "story_label": "OUR STORY",
+        "story_title": "MORE THAN JUST GAMING",
+        "story_text": "Saudi Arena is a digital platform designed to showcase the exciting world of Saudi esports. We bring tournaments, teams, players, games, and achievements together in one place, making competitive gaming easier to discover and explore.",
+        "story_image": "/static/esports/images/about-story.jpg",
+        "values": [
+            {
+                "number": "01",
+                "title": "OUR MISSION",
+                "description": "To create an engaging destination where esports fans can explore Saudi gaming competitions, discover teams, and celebrate competitive talent."
+            },
+            {
+                "number": "02",
+                "title": "OUR VISION",
+                "description": "To inspire greater interest in esports and highlight the growing opportunities within Saudi Arabia's competitive gaming community."
+            },
+            {
+                "number": "03",
+                "title": "OUR PASSION",
+                "description": "We believe gaming connects people through competition, teamwork, creativity, and unforgettable moments."
+            }
+        ]
+    },
+    "teams_page": {
+        "hero_image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1600&q=85",
+        "card_image": "/static/esports/images/teams-card.jpg"
+    },
     "featured_games": [
         {
             "name": "Rocket League",
             "slug": "rocket-league",
             "genre": "Sports",
             "description": "A competitive game that combines football with rocket-powered cars.",
-            "image_url": "",
+            "image_url": "/static/esports/images/game-rocket-league.jpg",
             "featured": true
         },
         {
@@ -14,7 +45,7 @@
             "slug": "valorant",
             "genre": "Tactical Shooter",
             "description": "A team-based tactical shooter focused on strategy and teamwork.",
-            "image_url": "",
+            "image_url": "/static/esports/images/game-valorant.jpg",
             "featured": true
         },
         {
@@ -22,11 +53,10 @@
             "slug": "pubg",
             "genre": "Battle Royale",
             "description": "A competitive battle royale game where players fight to be the last team standing.",
-            "image_url": "",
+            "image_url": "/static/esports/images/game-pubg.jpg",
             "featured": true
         }
     ],
-
     "featured_tournaments": [
         {
             "name": "Esports World Cup",
@@ -37,22 +67,19 @@
             "game": {
                 "name": "Rocket League"
             },
-            "image_url": "",
+            "image_url": "/static/esports/images/esports-world-cup-concept.jpg",
             "featured": true
         }
     ],
-
     "featured_teams": [
         {
             "name": "Team Falcons",
             "slug": "team-falcons",
             "description": "A Saudi esports organization competing across multiple competitive gaming titles.",
-            "logo_url": "",
+            "logo_url": "/static/esports/images/team-falcons-concept.jpg",
             "featured": true
         }
     ],
-
     "featured_players": [],
-
     "featured_achievements": []
 }

@@ -99,3 +99,73 @@ def toggle_theme(request):
 
     return response
 
+
+
+def teams(request):
+    data = load_data()
+
+    all_teams = data.get("featured_teams", [])
+    search_query = request.GET.get("search", "").strip()
+
+    filtered_teams = all_teams
+
+    if search_query:
+        filtered_teams = [
+            team for team in all_teams
+            if search_query.lower() in team["name"].lower()
+            or search_query.lower() in team["description"].lower()
+        ]
+
+    context = {
+        "teams": filtered_teams,
+        "search_query": search_query,
+        "total_teams": len(filtered_teams),
+        "teams_page": data.get("teams_page", {}),
+    }
+
+    return render(request, "esports/teams.html", context)
+
+
+def about(request):
+
+    data = load_data()
+
+    context = {
+        "about": data.get("about", {})
+    }
+
+    return render(
+        request,
+        "esports/about.html",
+        context
+    )
+
+def players(request):
+    data = load_data()
+
+    context = {
+        "players": data.get("featured_players", [])
+    }
+
+    return render(request, "esports/players.html", context)
+
+
+def games(request):
+    data = load_data()
+
+    context = {
+        "games": data.get("featured_games", [])
+    }
+
+    return render(request, "esports/games.html", context)
+
+
+def achievements(request):
+    data = load_data()
+
+    context = {
+        "achievements": data.get("featured_achievements", [])
+    }
+
+    return render(request, "esports/achievements.html", context)
+

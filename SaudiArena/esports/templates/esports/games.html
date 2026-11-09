@@ -1,0 +1,80 @@
+
+{% extends "esports/base.html" %}
+
+{% block title %}Games | Saudi Arena{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+    <div class="container">
+        <span class="section-label">EXPLORE THE GAMES</span>
+        <h1>COMPETITIVE GAMES</h1>
+        <p>Explore the games featured in Saudi esports.</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+
+        <div class="section-header">
+            <div>
+                <span class="section-label">GAME LIBRARY</span>
+                <h2>Discover Games</h2>
+                <p>From tactical shooters to competitive sports.</p>
+            </div>
+        </div>
+
+        <div class="teams-directory-grid">
+
+            {% for game in games %}
+
+            <article class="directory-team-card">
+
+                <div class="directory-team-logo">
+
+                    {% if game.image_url %}
+                        <img
+                            src="{{ game.image_url }}"
+                            alt="{{ game.name }}"
+                            loading="lazy"
+                        >
+                    {% else %}
+                        <span>{{ game.name|first|upper }}</span>
+                    {% endif %}
+
+                </div>
+
+                <div class="directory-team-content">
+
+                    <span class="directory-team-label">
+                        {{ game.genre }}
+                    </span>
+
+                    <h3>{{ game.name }}</h3>
+
+                    <p>{{ game.description }}</p>
+
+                    <div class="directory-team-footer">
+                        <span>COMPETITIVE GAMING</span>
+                        <span class="directory-team-star">★</span>
+                    </div>
+
+                </div>
+
+            </article>
+
+            {% empty %}
+
+            <div class="teams-empty-state">
+                <h3>No Games Available</h3>
+                <p>Games will be added soon.</p>
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}
