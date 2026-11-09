@@ -1,0 +1,135 @@
+
+{% extends "esports/base.html" %}
+
+{% block title %}Tournaments | Saudi Arena{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+    <div class="container">
+        <span class="section-label">COMPETE FOR GLORY</span>
+        <h1>ESPORTS TOURNAMENTS</h1>
+        <p>
+            Discover competitive gaming tournaments,
+            explore events, and follow the action
+            across Saudi esports.
+        </p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+
+        <div class="section-header">
+            <div>
+                <span class="section-label">EXPLORE EVENTS</span>
+                <h2>All Tournaments</h2>
+            </div>
+        </div>
+
+        <form method="get" class="filter-bar">
+
+            <input
+                type="text"
+                name="search"
+                class="search-input"
+                placeholder="Search tournaments or games..."
+                value="{{ search_query }}"
+            >
+
+            <select name="status" class="search-input">
+
+                <option value="">All Statuses</option>
+
+                <option value="Upcoming"
+                    {% if selected_status == "Upcoming" %}selected{% endif %}>
+                    Upcoming
+                </option>
+
+                <option value="Ongoing"
+                    {% if selected_status == "Ongoing" %}selected{% endif %}>
+                    Ongoing
+                </option>
+
+                <option value="Completed"
+                    {% if selected_status == "Completed" %}selected{% endif %}>
+                    Completed
+                </option>
+
+            </select>
+
+            <button type="submit" class="btn btn-primary">
+                Search
+            </button>
+
+            <a href="{% url 'tournaments' %}" class="btn btn-secondary">
+                Reset
+            </a>
+
+        </form>
+
+        <div class="cards-grid">
+
+            {% for tournament in tournaments %}
+
+            <article class="card tournament-card">
+
+                {% if tournament.image_url %}
+
+                <img
+                    src="{{ tournament.image_url }}"
+                    alt="{{ tournament.name }}"
+                    class="tournament-image"
+                >
+
+                {% else %}
+
+                <div class="tournament-placeholder">
+                    <span>SAUDI ARENA</span>
+                </div>
+
+                {% endif %}
+
+                <div class="tournament-content">
+
+                    <span class="tournament-status">
+                        {{ tournament.status }}
+                    </span>
+
+                    <h3>{{ tournament.name }}</h3>
+
+                    <p>{{ tournament.description }}</p>
+
+                    <div class="tournament-details">
+
+                        <span>
+                            Game: {{ tournament.game.name }}
+                        </span>
+
+                        <span>
+                            Location: {{ tournament.location }}
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            {% empty %}
+
+            <div class="home-empty-state">
+                <h3>No Tournaments Found</h3>
+                <p>
+                    Try another search or change the filters.
+                </p>
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

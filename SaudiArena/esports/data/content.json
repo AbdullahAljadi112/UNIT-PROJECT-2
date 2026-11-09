@@ -1,0 +1,58 @@
+
+{
+    "featured_games": [
+        {
+            "name": "Rocket League",
+            "slug": "rocket-league",
+            "genre": "Sports",
+            "description": "A competitive game that combines football with rocket-powered cars.",
+            "image_url": "",
+            "featured": true
+        },
+        {
+            "name": "Valorant",
+            "slug": "valorant",
+            "genre": "Tactical Shooter",
+            "description": "A team-based tactical shooter focused on strategy and teamwork.",
+            "image_url": "",
+            "featured": true
+        },
+        {
+            "name": "PUBG",
+            "slug": "pubg",
+            "genre": "Battle Royale",
+            "description": "A competitive battle royale game where players fight to be the last team standing.",
+            "image_url": "",
+            "featured": true
+        }
+    ],
+
+    "featured_tournaments": [
+        {
+            "name": "Esports World Cup",
+            "slug": "esports-world-cup",
+            "description": "An international esports competition hosted in Riyadh, bringing together professional teams across multiple games.",
+            "location": "Riyadh, Saudi Arabia",
+            "status": "Completed",
+            "game": {
+                "name": "Rocket League"
+            },
+            "image_url": "",
+            "featured": true
+        }
+    ],
+
+    "featured_teams": [
+        {
+            "name": "Team Falcons",
+            "slug": "team-falcons",
+            "description": "A Saudi esports organization competing across multiple competitive gaming titles.",
+            "logo_url": "",
+            "featured": true
+        }
+    ],
+
+    "featured_players": [],
+
+    "featured_achievements": []
+}
