@@ -11,4 +11,5 @@ urlpatterns = [
     path("games/", views.games, name="games"),
     path("achievements/", views.achievements, name="achievements"),
     path("toggle-theme/", views.toggle_theme, name="toggle_theme"),
+    path("players/<slug:slug>/", views.player_detail, name="player_detail"),
 ]

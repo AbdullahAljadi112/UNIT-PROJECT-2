@@ -7,9 +7,9 @@
 
 <section class="page-header">
     <div class="container">
-        <span class="section-label">THE COMPETITORS</span>
-        <h1>ESPORTS PLAYERS</h1>
-        <p>Discover the talent behind competitive gaming.</p>
+        <span class="section-label">SAUDI ESPORTS TALENT</span>
+        <h1>MEET THE PLAYERS</h1>
+        <p>Discover Saudi esports stars, their stories and achievements.</p>
     </div>
 </section>
 
@@ -19,8 +19,8 @@
         <div class="section-header">
             <div>
                 <span class="section-label">PLAYER DIRECTORY</span>
-                <h2>Meet the Players</h2>
-                <p>Explore players featured on Saudi Arena.</p>
+                <h2>Featured Players</h2>
+                <p>Click a player card to explore their career.</p>
             </div>
         </div>
 
@@ -28,18 +28,20 @@
 
             {% for player in players %}
 
-            <article class="directory-team-card">
+            <a href="{% url 'player_detail' player.slug %}"
+               class="directory-team-card"
+               style="display:block; text-decoration:none; color:inherit;">
 
                 <div class="directory-team-logo">
 
                     {% if player.image_url %}
-                        <img
-                            src="{{ player.image_url }}"
-                            alt="{{ player.name }}"
-                            loading="lazy"
-                        >
+                    <img
+                        src="{{ player.image_url }}"
+                        alt="{{ player.name }}"
+                        loading="lazy"
+                    >
                     {% else %}
-                        <span>{{ player.name|first|upper }}</span>
+                    <span>{{ player.name|first|upper }}</span>
                     {% endif %}
 
                 </div>
@@ -47,33 +49,27 @@
                 <div class="directory-team-content">
 
                     <span class="directory-team-label">
-                        ESPORTS PLAYER
+                        {{ player.game }}
                     </span>
 
                     <h3>{{ player.name }}</h3>
 
-                    {% if player.nickname %}
-                        <p>Nickname: {{ player.nickname }}</p>
-                    {% endif %}
+                    <p>{{ player.real_name }}</p>
+                    <p>{{ player.team }}</p>
 
-                    {% if player.team %}
-                        <p>Team: {{ player.team }}</p>
-                    {% endif %}
-
-                    {% if player.game %}
-                        <p>Game: {{ player.game }}</p>
-                    {% endif %}
-
-                    <p>{{ player.description }}</p>
+                    <div class="directory-team-footer">
+                        <span>VIEW PLAYER PROFILE</span>
+                        <span class="directory-team-star">➜</span>
+                    </div>
 
                 </div>
 
-            </article>
+            </a>
 
             {% empty %}
 
             <div class="teams-empty-state">
-                <h3>Players Coming Soon</h3>
+                <h3>No Players Available</h3>
                 <p>Player profiles will be added soon.</p>
             </div>
 

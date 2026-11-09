@@ -169,3 +169,33 @@ def achievements(request):
 
     return render(request, "esports/achievements.html", context)
 
+from django.http import Http404
+
+
+def player_detail(request, slug):
+    data = load_data()
+
+    players = data.get("featured_players", [])
+
+    player = next(
+        (
+            item for item in players
+            if item.get("slug") == slug
+        ),
+        None
+    )
+
+    if player is None:
+        raise Http404("Player not found")
+
+    context = {
+        "player": player
+    }
+
+    return render(
+        request,
+        "esports/player_detail.html",
+        context
+    )
+
+
