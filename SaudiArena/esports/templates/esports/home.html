@@ -1,12 +1,36 @@
 
 {% extends 'esports/base.html' %}
+{% load static %}
 
 {% block title %}Home | Saudi Arena{% endblock %}
 
 {% block content %}
 
+<!-- HOME HERO WITH VIDEO -->
 <section class="hero home-hero" id="home">
 
+    <!-- BACKGROUND VIDEO -->
+    <div class="home-video-background" aria-hidden="true">
+
+        <video
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+        >
+            <source
+                src="{% static 'esports/videos/saudi-arena-hero.mp4.mp4' %}"
+                type="video/mp4"
+            >
+        </video>
+
+    </div>
+
+    <!-- DARK OVERLAY -->
+    <div class="home-video-overlay"></div>
+
+    <!-- HERO CONTENT -->
     <div class="container">
 
         <div class="hero-content">
@@ -22,21 +46,21 @@
             </h1>
 
             <p class="hero-description">
-                Discover the world of competitive gaming in Saudi Arabia.
-                Explore tournaments, meet talented players, discover
-                professional teams, and celebrate Saudi esports achievements.
+                Discover the world of competitive gaming
+                in Saudi Arabia. Your gateway to teams,
+                players, games, tournaments, and achievements.
             </p>
 
             <div class="btn-group">
 
-                <a href="#tournaments" class="btn btn-primary">
-                    Explore Tournaments
-                    <span>↗</span>
+                <a href="#gateway" class="btn btn-primary">
+                    Explore Saudi Arena
+                    <span aria-hidden="true">↓</span>
                 </a>
 
-                <a href="#about-esports" class="btn btn-outline">
-                    Discover Saudi Esports
-                    <span>↓</span>
+                <a href="{% url 'about' %}" class="btn btn-outline">
+                    About Us
+                    <span aria-hidden="true">↗</span>
                 </a>
 
             </div>
@@ -59,564 +83,63 @@
 </section>
 
 
-<section class="section" id="about-esports">
+<!-- GATEWAY -->
+<section class="home-gateway" id="gateway">
 
     <div class="container">
 
-        <div class="home-intro">
+        <div class="home-gateway-heading">
 
-            <div class="home-intro-text">
-
-                <span class="section-tag">
-                    ABOUT SAUDI ESPORTS
-                </span>
-
-                <h2 class="section-title">
-                    MORE THAN
-                    <span>JUST A GAME.</span>
-                </h2>
-
-                <p class="section-description">
-                    Esports has become an important part of Saudi Arabia's
-                    growing gaming and entertainment landscape.
-                </p>
-
-                <p class="section-description">
-                    From local competitions to international championships,
-                    Saudi Arabia brings together talented players,
-                    professional teams, and passionate gaming communities.
-                </p>
-
-                <p class="section-description">
-                    Saudi Arena is your gateway to discovering this
-                    exciting competitive world.
-                </p>
-
-                <a href="#explore" class="btn btn-primary">
-                    Explore Our Platform
-                    <span>↗</span>
-                </a>
-
-            </div>
-
-            <div class="home-intro-visual">
-
-                <img
-                    src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1100&q=85"
-                    alt="Competitive esports gaming event"
-                    loading="lazy"
-                >
-
-                <div class="intro-visual-label">
-
-                    <span>SAUDI ARENA</span>
-
-                    <strong>
-                        PLAY.
-                        COMPETE.
-                        ACHIEVE.
-                    </strong>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<section class="section section-alt" id="tournaments">
-
-    <div class="container">
-
-        <div class="section-header">
-
-            <span class="section-tag">
-                THE COMPETITION
+            <span class="sa-about-overline">
+                EXPLORE SAUDI ARENA
             </span>
 
-            <h2 class="section-title">
-                FEATURED
-                <span>TOURNAMENTS</span>
-            </h2>
+            <h2>YOUR GATEWAY TO ESPORTS.</h2>
 
-            <p class="section-description">
-                Explore exciting esports competitions and discover
-                the tournaments shaping competitive gaming.
+            <p>
+                Everything you need to discover
+                Saudi esports, all in one place.
             </p>
 
         </div>
 
-        <div class="cards-grid">
-
-            {% for tournament in featured_tournaments %}
-
-            <article class="card">
-
-                {% if tournament.image_url %}
-
-                <img
-                    src="{{ tournament.image_url }}"
-                    alt="{{ tournament.name }}"
-                    class="card-image"
-                    loading="lazy"
-                >
-
-                {% else %}
-
-                <div class="home-image-fallback">
-                    🏆
-                </div>
-
-                {% endif %}
-
-                <div class="card-content">
-
-                    <span class="badge">
-                        {{ tournament.status }}
-                    </span>
-
-                    <h3 class="card-title">
-                        {{ tournament.name }}
-                    </h3>
-
-                    <p class="card-description">
-                        {{ tournament.description|truncatewords:22 }}
-                    </p>
-
-                    <div class="home-card-meta">
-
-                        <span>
-                            🎮 {{ tournament.game.name }}
-                        </span>
-
-                        <span>
-                            📍 {{ tournament.location }}
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-            {% empty %}
-
-            <div class="home-empty-state">
-
-                <span class="empty-icon">🏆</span>
-
-                <h3>Tournaments Coming Soon</h3>
-
-                <p>
-                    Featured tournaments will appear here
-                    when they are added to Saudi Arena.
-                </p>
-
-            </div>
-
-            {% endfor %}
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<section class="section" id="teams">
-
-    <div class="container">
-
-        <div class="section-header">
-
-            <span class="section-tag">
-                THE COMPETITORS
-            </span>
-
-            <h2 class="section-title">
-                MEET THE
-                <span>TEAMS</span>
-            </h2>
-
-            <p class="section-description">
-                Discover Saudi esports teams, their identities,
-                and their journeys through competitive gaming.
-            </p>
-
-        </div>
-
-        <div class="cards-grid">
-
-            {% for team in featured_teams %}
-
-            <article class="card home-team-card">
-
-                <div class="team-logo-area">
-
-                    {% if team.logo_url %}
-
-                    <img
-                        src="{{ team.logo_url }}"
-                        alt="{{ team.name }} logo"
-                        class="team-logo"
-                        loading="lazy"
-                    >
-
-                    {% else %}
-
-                    <span class="team-logo-fallback">
-                        {{ team.name|slice:":2"|upper }}
-                    </span>
-
-                    {% endif %}
-
-                </div>
-
-                <div class="card-content">
-
-                    <h3 class="card-title">
-                        {{ team.name }}
-                    </h3>
-
-                    <p class="card-description">
-                        {{ team.description|truncatewords:25 }}
-                    </p>
-
-                    <span class="badge">
-                        ESPORTS TEAM
-                    </span>
-
-                </div>
-
-            </article>
-
-            {% empty %}
-
-            <div class="home-empty-state">
-
-                <span class="empty-icon">👥</span>
-
-                <h3>Teams Coming Soon</h3>
-
-                <p>
-                    Discover professional esports teams
-                    as they join our collection.
-                </p>
-
-            </div>
-
-            {% endfor %}
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<section class="section section-alt" id="games">
-
-    <div class="container">
-
-        <div class="section-header">
-
-            <span class="section-tag">
-                CHOOSE YOUR GAME
-            </span>
-
-            <h2 class="section-title">
-                POPULAR
-                <span>GAMES</span>
-            </h2>
-
-            <p class="section-description">
-                From tactical shooters to football and racing,
-                explore the games behind esports competitions.
-            </p>
-
-        </div>
-
-        <div class="cards-grid">
-
-            {% for game in featured_games %}
-
-            <article class="card">
-
-                {% if game.image_url %}
-
-                <img
-                    src="{{ game.image_url }}"
-                    alt="{{ game.name }}"
-                    class="card-image"
-                    loading="lazy"
-                >
-
-                {% else %}
-
-                <div class="home-image-fallback">
-                    🎮
-                </div>
-
-                {% endif %}
-
-                <div class="card-content">
-
-                    <span class="badge">
-                        {{ game.genre }}
-                    </span>
-
-                    <h3 class="card-title">
-                        {{ game.name }}
-                    </h3>
-
-                    <p class="card-description">
-                        {{ game.description|truncatewords:22 }}
-                    </p>
-
-                </div>
-
-            </article>
-
-            {% empty %}
-
-            <div class="home-empty-state">
-
-                <span class="empty-icon">🎮</span>
-
-                <h3>Games Coming Soon</h3>
-
-                <p>
-                    Competitive games will be featured here.
-                </p>
-
-            </div>
-
-            {% endfor %}
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<section class="section" id="players">
-
-    <div class="container">
-
-        <div class="section-header">
-
-            <span class="section-tag">
-                THE TALENT
-            </span>
-
-            <h2 class="section-title">
-                FEATURED
-                <span>PLAYERS</span>
-            </h2>
-
-            <p class="section-description">
-                Get to know the players competing in
-                the Saudi esports scene.
-            </p>
-
-        </div>
-
-        <div class="cards-grid">
-
-            {% for player in featured_players %}
-
-            <article class="card">
-
-                {% if player.image_url %}
-
-                <img
-                    src="{{ player.image_url }}"
-                    alt="{{ player.nickname }}"
-                    class="card-image player-image"
-                    loading="lazy"
-                >
-
-                {% else %}
-
-                <div class="home-image-fallback">
-                    🎧
-                </div>
-
-                {% endif %}
-
-                <div class="card-content">
-
-                    <span class="badge">
-                        PRO PLAYER
-                    </span>
-
-                    <h3 class="card-title">
-                        {{ player.nickname }}
-                    </h3>
-
-                    <p class="card-description">
-                        {{ player.name }}
-                    </p>
-
-                    <div class="home-card-meta">
-
-                        <span>
-                            🎮 {{ player.game.name }}
-                        </span>
-
-                        <span>
-                            👥 {{ player.team.name }}
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-            {% empty %}
-
-            <div class="home-empty-state">
-
-                <span class="empty-icon">🎧</span>
-
-                <h3>Players Coming Soon</h3>
-
-                <p>
-                    Player profiles will appear here
-                    as we build our esports database.
-                </p>
-
-            </div>
-
-            {% endfor %}
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<section class="section section-alt" id="achievements">
-
-    <div class="container">
-
-        <div class="section-header">
-
-            <span class="section-tag">
-                THE LEGACY
-            </span>
-
-            <h2 class="section-title">
-                SAUDI
-                <span>ACHIEVEMENTS</span>
-            </h2>
-
-            <p class="section-description">
-                Explore milestones and achievements
-                in Saudi competitive gaming.
-            </p>
-
-        </div>
-
-        <div class="achievements-list">
-
-            {% for achievement in featured_achievements %}
-
-            <article class="achievement-item">
-
-                <div class="achievement-year">
-                    {{ achievement.year }}
-                </div>
-
-                <div class="achievement-content">
-
-                    <span class="badge">
-                        ACHIEVEMENT
-                    </span>
-
-                    <h3>
-                        {{ achievement.title }}
-                    </h3>
-
-                    <p>
-                        {{ achievement.description }}
-                    </p>
-
-                </div>
-
-                <span class="achievement-symbol">
-                    ★
-                </span>
-
-            </article>
-
-            {% empty %}
-
-            <div class="home-empty-state">
-
-                <span class="empty-icon">🏅</span>
-
-                <h3>Achievements Coming Soon</h3>
-
-                <p>
-                    Saudi esports milestones will
-                    be displayed here.
-                </p>
-
-            </div>
-
-            {% endfor %}
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<section class="section" id="explore">
-
-    <div class="container">
-
-        <div class="explore-banner">
-
-            <div class="explore-banner-content">
-
-                <span class="section-tag">
-                    YOUR JOURNEY STARTS HERE
-                </span>
-
-                <h2>
-                    READY TO ENTER
-                    <span>THE ARENA?</span>
-                </h2>
-
-                <p>
-                    Explore the people, games, teams,
-                    and competitions driving the
-                    Saudi esports community forward.
-                </p>
-
-                <div class="btn-group">
-
-                    <a href="#tournaments" class="btn btn-primary">
-                        Explore Tournaments
-                    </a>
-
-                    <a href="#teams" class="btn btn-outline">
-                        Discover Teams
-                    </a>
-
-                </div>
-
-            </div>
+        <div class="home-gateway-links">
+
+            <a href="{% url 'teams' %}">
+                <span>01</span>
+                <strong>TEAMS</strong>
+                <span aria-hidden="true">↗</span>
+            </a>
+
+            <a href="{% url 'players' %}">
+                <span>02</span>
+                <strong>PLAYERS</strong>
+                <span aria-hidden="true">↗</span>
+            </a>
+
+            <a href="{% url 'games' %}">
+                <span>03</span>
+                <strong>GAMES</strong>
+                <span aria-hidden="true">↗</span>
+            </a>
+
+            <a href="{% url 'tournaments' %}">
+                <span>04</span>
+                <strong>TOURNAMENTS</strong>
+                <span aria-hidden="true">↗</span>
+            </a>
+
+            <a href="{% url 'achievements' %}">
+                <span>05</span>
+                <strong>ACHIEVEMENTS</strong>
+                <span aria-hidden="true">↗</span>
+            </a>
+
+            <a href="{% url 'about' %}">
+                <span>06</span>
+                <strong>ABOUT US</strong>
+                <span aria-hidden="true">↗</span>
+            </a>
 
         </div>
 

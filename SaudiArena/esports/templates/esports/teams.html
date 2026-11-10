@@ -1,24 +1,28 @@
 
 {% extends "esports/base.html" %}
+{% load static %}
 
 {% block title %}Teams | Saudi Arena{% endblock %}
 
 {% block content %}
 
+<!-- HERO SECTION -->
 <section class="teams-pro-hero">
 
+    {% if teams_page.hero_image %}
     <img
         src="{{ teams_page.hero_image }}"
-        alt="Esports competition arena"
+        alt="Saudi esports competition arena"
         class="teams-pro-hero-image"
     >
+    {% endif %}
 
     <div class="teams-pro-overlay"></div>
 
     <div class="container teams-pro-hero-content">
 
         <span class="teams-pro-eyebrow">
-            THE SPIRIT OF COMPETITION
+            🇸🇦 THE SPIRIT OF COMPETITION
         </span>
 
         <h1>
@@ -32,7 +36,7 @@
         </p>
 
         <a href="#explore-teams" class="btn btn-primary">
-            Explore Teams
+            👑 Explore Teams
         </a>
 
     </div>
@@ -44,13 +48,21 @@
 
 </section>
 
+
+<!-- INTRO SECTION -->
 <section class="teams-pro-intro">
 
     <div class="container teams-pro-intro-grid">
 
         <div>
-            <span class="section-label">THE COMPETITIVE SCENE</span>
-            <h2>ONE ARENA.<br><span>ENDLESS AMBITION.</span></h2>
+            <span class="section-label">
+                THE COMPETITIVE SCENE
+            </span>
+
+            <h2>
+                ONE ARENA.<br>
+                <span>ENDLESS AMBITION.</span>
+            </h2>
         </div>
 
         <p>
@@ -63,6 +75,8 @@
 
 </section>
 
+
+<!-- TEAMS DIRECTORY -->
 <section class="section teams-pro-directory" id="explore-teams">
 
     <div class="container">
@@ -70,28 +84,39 @@
         <div class="teams-pro-heading">
 
             <div>
-                <span class="section-label">THE ROSTER</span>
-                <h2>EXPLORE <span>TEAMS</span></h2>
+                <span class="section-label">
+                    👑 THE ROSTER
+                </span>
+
+                <h2>
+                    EXPLORE <span>TEAMS</span>
+                </h2>
+
+                <p class="teams-pro-subtitle">
+                    Meet the organizations powering Saudi gaming.
+                </p>
             </div>
 
             <span class="teams-pro-count">
-                {{ total_teams }} RESULTS
+                🏆 {{ total_teams }} RESULTS
             </span>
 
         </div>
 
+
+        <!-- SEARCH -->
         <form method="get" class="teams-pro-search">
 
             <input
                 type="search"
                 name="search"
                 placeholder="Search for a team..."
-                value="{{ search_query }}"
+                value="{{ search_query|default:'' }}"
                 aria-label="Search teams"
             >
 
             <button type="submit" class="btn btn-primary">
-                Search Teams
+                🔎 Search Teams
             </button>
 
             <a href="{% url 'teams' %}" class="btn btn-secondary">
@@ -100,6 +125,8 @@
 
         </form>
 
+
+        <!-- TEAM CARDS -->
         <div class="teams-pro-grid">
 
             {% for team in teams %}
@@ -108,18 +135,26 @@
 
                 <div class="teams-pro-card-visual">
 
+                    {% if teams_page.card_image %}
                     <img
                         src="{{ teams_page.card_image }}"
-                        alt="Competitive gaming setup"
+                        alt=""
                         loading="lazy"
+                        class="teams-pro-card-background"
                     >
+                    {% endif %}
 
                     <div class="teams-pro-card-shade"></div>
 
                     <span class="teams-pro-card-tag">
-                        FEATURED ORGANIZATION
+                        🇸🇦 SAUDI ORGANIZATION
                     </span>
 
+                    <span class="teams-pro-card-number">
+                        {{ forloop.counter|stringformat:"02d" }}
+                    </span>
+
+                    <!-- TEAM LOGO -->
                     <div class="teams-pro-emblem">
 
                         {% if team.logo_url %}
@@ -132,7 +167,9 @@
 
                         {% else %}
 
-                        <span>{{ team.name|first|upper }}</span>
+                        <span>
+                            {{ team.name|first|upper }}
+                        </span>
 
                         {% endif %}
 
@@ -140,10 +177,12 @@
 
                 </div>
 
+
+                <!-- TEAM INFO -->
                 <div class="teams-pro-card-body">
 
                     <span class="teams-pro-card-category">
-                        SAUDI ESPORTS
+                        🎮 SAUDI ESPORTS
                     </span>
 
                     <h3>{{ team.name }}</h3>
@@ -151,11 +190,8 @@
                     <p>{{ team.description }}</p>
 
                     <div class="teams-pro-card-footer">
-
-                        <span>COMPETITIVE GAMING</span>
-
+                        <span>🇸🇦 SAUDI ARENA</span>
                         <span class="teams-pro-card-symbol">✦</span>
-
                     </div>
 
                 </div>
@@ -167,6 +203,7 @@
             <div class="teams-pro-empty">
                 <h3>No teams found</h3>
                 <p>Try another team name.</p>
+
                 <a href="{% url 'teams' %}" class="btn btn-primary">
                     Show All Teams
                 </a>
@@ -180,13 +217,20 @@
 
 </section>
 
+
+<!-- FINAL CTA -->
 <section class="teams-pro-cta">
 
     <div class="container teams-pro-cta-inner">
 
-        <span class="section-label">BE PART OF THE ACTION</span>
+        <span class="section-label">
+            🏆 BE PART OF THE ACTION
+        </span>
 
-        <h2>THE NEXT MATCH<br>STARTS HERE.</h2>
+        <h2>
+            THE NEXT MATCH<br>
+            STARTS HERE.
+        </h2>
 
         <p>
             Explore esports tournaments and discover
@@ -194,7 +238,7 @@
         </p>
 
         <a href="{% url 'tournaments' %}" class="btn btn-primary">
-            Discover Tournaments
+            🏆 Discover Tournaments
         </a>
 
     </div>

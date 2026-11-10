@@ -53,24 +53,107 @@
             "slug": "pubg",
             "genre": "Battle Royale",
             "description": "A competitive battle royale game where players fight to be the last team standing.",
-            "image_url": "/static/esports/images/game-pubg.jpg",
+            "image_url": "/static/esports/images/game-pubg.jpg.",
             "featured": true
+        },
+
+        {
+            "name": "Call of Duty",
+            "genre": "First-Person Shooter",
+            "description": "A fast-paced competitive shooter featuring intense multiplayer battles, tactical teamwork, and high-level esports competition.",
+            "image_url": "/static/esports/images/cod-mw4.jpg.png"
+        },
+        {
+            "name": "Overwatch",
+            "genre": "Hero Shooter",
+            "description": "A team-based competitive shooter where unique heroes, special abilities, and strategic coordination determine victory.",
+            "image_url": "/static/esports/images/overwatch-2026.jpg.png"
+        },
+        {
+            "name": "EA SPORTS FC 27",
+            "genre": "Football Simulation",
+            "description": "A competitive football experience bringing world-class clubs, tactical gameplay, and professional esports tournaments together.",
+            "image_url": "/static/esports/images/fc-27.jpg.png"
         }
+
     ],
+   
     "featured_tournaments": [
         {
             "name": "Esports World Cup",
             "slug": "esports-world-cup",
-            "description": "An international esports competition hosted in Riyadh, bringing together professional teams across multiple games.",
+            "description": "A major international esports event hosted in Riyadh, featuring elite organizations competing across multiple games for prestigious titles.",
             "location": "Riyadh, Saudi Arabia",
+            "status": "Completed",
+            "game": {
+                "name": "Multiple Games"
+            },
+            "image_url": "/static/esports/images/esports-world-cup-concept.jpg",
+            "featured": true
+        },
+        {
+            "name": "Saudi eLeague",
+            "slug": "saudi-eleague",
+            "description": "Saudi Arabia's national esports league, bringing together competitive teams and players across different games to develop local talent.",
+            "location": "Saudi Arabia",
+            "status": "Completed",
+            "game": {
+                "name": "Multiple Games"
+            },
+            "image_url": "/static/esports/images/saudi-eleague.jpg.png",
+            "featured": true
+        },
+        {
+            "name": "RLCS World Championship",
+            "slug": "rlcs-world-championship",
+            "description": "The premier Rocket League world championship, where the best professional teams compete for the highest international title.",
+            "location": "International",
             "status": "Completed",
             "game": {
                 "name": "Rocket League"
             },
-            "image_url": "/static/esports/images/esports-world-cup-concept.jpg",
+            "image_url": "/static/esports/images/rlcs-worlds.jpg.png",
+            "featured": true
+        },
+        {
+            "name": "FIFAe World Cup",
+            "slug": "fifae-world-cup",
+            "description": "An international esports competition bringing national teams together to compete in football-related esports titles, including Rocket League.",
+            "location": "International",
+            "status": "Completed",
+            "game": {
+                "name": "Football Esports / Rocket League"
+            },
+            "image_url": "/static/esports/images/fifae-world-cup.jpg.png",
+            "featured": true
+        },
+        {
+            "name": "Overwatch World Cup",
+            "slug": "overwatch-world-cup",
+            "description": "A global national-team competition in Overwatch, featuring international teams battling through qualifiers and championship matches.",
+            "location": "International",
+            "status": "Completed",
+            "game": {
+                "name": "Overwatch"
+            },
+            "image_url": "/static/esports/images/overwatch-world-cup.jpg.png",
+            "featured": true
+        },
+        {
+            "name": "PUBG Mobile Global Championship",
+            "slug": "pubg-mobile-global-championship",
+            "description": "A global PUBG Mobile tournament featuring top professional teams competing through multiple stages for the world championship title.",
+            "location": "International",
+            "status": "Completed",
+            "game": {
+                "name": "PUBG Mobile"
+            },
+            "image_url": "/static/esports/images/pubg-global.jpg.png",
             "featured": true
         }
-    ],
+]
+
+    ,
     "featured_teams": [
         {
             "name": "Team Falcons",
@@ -78,7 +161,34 @@
             "description": "A Saudi esports organization competing across multiple competitive gaming titles.",
             "logo_url": "/static/esports/images/team-falcons-concept.jpg",
             "featured": true
+        },
+
+        {
+            "name": "POWR",
+            "description": "POWR is a Saudi gaming and entertainment organization known for its popular content creators, gaming personalities, and strong presence in the Saudi gaming community.",
+            "logo_url": "/static/esports/images/powr.jpg.png"
+        },
+        {
+            "name": "Twisted Minds",
+            "description": "Twisted Minds is a Saudi esports organization competing across multiple games and international tournaments, representing the Kingdom on the global stage.",
+            "logo_url": "/static/esports/images/twisted-minds.png.png"
+        },
+        {
+            "name": "R8 Esports",
+            "description": "R8 Esports is a Saudi competitive gaming organization with a presence in esports tournaments and the growing regional gaming scene.",
+            "logo_url": "/static/esports/images/r8-esports.jpg.png"
+        },
+        {
+            "name": "ROC Esports",
+            "description": "ROC Esports is a Saudi esports organization participating in competitive gaming and contributing to the development of the local esports community.",
+            "logo_url": "/static/esports/images/roc-esports.png.png"
+        },
+        {
+            "name": "Team RA'AD",
+            "description": "Team RA'AD is a Saudi esports organization associated with competitive gaming and the Kingdom's expanding esports ecosystem.",
+            "logo_url": "/static/esports/images/team-raad.png.png"
         }
+
     ],
     "featured_players": [
         {

@@ -5,131 +5,219 @@
 
 {% block content %}
 
-<section class="page-header">
-    <div class="container">
-        <span class="section-label">COMPETE FOR GLORY</span>
-        <h1>ESPORTS TOURNAMENTS</h1>
-        <p>
-            Discover competitive gaming tournaments,
-            explore events, and follow the action
-            across Saudi esports.
-        </p>
-    </div>
-</section>
+<main class="th-page">
 
-<section class="section">
-    <div class="container">
+    <!-- COMPACT HEADER -->
+    <section class="th-header">
+        <div class="container th-header-inner">
 
-        <div class="section-header">
-            <div>
-                <span class="section-label">EXPLORE EVENTS</span>
-                <h2>All Tournaments</h2>
+            <div class="th-header-copy">
+                <span class="th-eyebrow">
+                    SAUDI ARENA / COMPETITIONS
+                </span>
+
+                <h1>
+                    ESPORTS <span>TOURNAMENTS</span>
+                </h1>
+
+                <p>
+                    Explore the championships and competitions
+                    shaping the world of esports.
+                </p>
             </div>
+
+            <div class="th-header-count">
+                <strong>{{ tournaments|length|stringformat:"02d" }}</strong>
+                <span>TOURNAMENTS</span>
+            </div>
+
         </div>
+    </section>
 
-        <form method="get" class="filter-bar">
 
-            <input
-                type="text"
-                name="search"
-                class="search-input"
-                placeholder="Search tournaments or games..."
-                value="{{ search_query }}"
-            >
+    <!-- FILTERS -->
+    <section class="th-directory">
+        <div class="container">
 
-            <select name="status" class="search-input">
+            <div class="th-toolbar">
 
-                <option value="">All Statuses</option>
-
-                <option value="Upcoming"
-                    {% if selected_status == "Upcoming" %}selected{% endif %}>
-                    Upcoming
-                </option>
-
-                <option value="Ongoing"
-                    {% if selected_status == "Ongoing" %}selected{% endif %}>
-                    Ongoing
-                </option>
-
-                <option value="Completed"
-                    {% if selected_status == "Completed" %}selected{% endif %}>
-                    Completed
-                </option>
-
-            </select>
-
-            <button type="submit" class="btn btn-primary">
-                Search
-            </button>
-
-            <a href="{% url 'tournaments' %}" class="btn btn-secondary">
-                Reset
-            </a>
-
-        </form>
-
-        <div class="cards-grid">
-
-            {% for tournament in tournaments %}
-
-            <article class="card tournament-card">
-
-                {% if tournament.image_url %}
-
-                <img
-                    src="{{ tournament.image_url }}"
-                    alt="{{ tournament.name }}"
-                    class="tournament-image"
-                >
-
-                {% else %}
-
-                <div class="tournament-placeholder">
-                    <span>SAUDI ARENA</span>
+                <div class="th-toolbar-title">
+                    <span class="th-eyebrow">DISCOVER EVENTS</span>
+                    <h2>Explore Competitions</h2>
                 </div>
 
-                {% endif %}
+                <form method="get" class="th-filters">
 
-                <div class="tournament-content">
+                    <input
+                        type="search"
+                        name="search"
+                        placeholder="Search tournaments or games..."
+                        value="{{ search_query|default:'' }}"
+                        aria-label="Search tournaments"
+                    >
 
-                    <span class="tournament-status">
-                        {{ tournament.status }}
-                    </span>
+                    <select
+                        name="status"
+                        aria-label="Filter tournaments by status"
+                    >
+                        <option value="">All Statuses</option>
 
-                    <h3>{{ tournament.name }}</h3>
+                        <option value="Upcoming"
+                            {% if selected_status == "Upcoming" %}selected{% endif %}>
+                            Upcoming
+                        </option>
 
-                    <p>{{ tournament.description }}</p>
+                        <option value="Ongoing"
+                            {% if selected_status == "Ongoing" %}selected{% endif %}>
+                            Ongoing
+                        </option>
 
-                    <div class="tournament-details">
+                        <option value="Completed"
+                            {% if selected_status == "Completed" %}selected{% endif %}>
+                            Completed
+                        </option>
+                    </select>
 
-                        <span>
-                            Game: {{ tournament.game.name }}
+                    <button type="submit" class="th-search-btn">
+                        Search
+                    </button>
+
+                    <a href="{% url 'tournaments' %}" class="th-reset-btn">
+                        Reset
+                    </a>
+
+                </form>
+
+            </div>
+
+
+            <!-- EQUAL TOURNAMENT GRID -->
+            <div class="th-grid">
+
+                {% for tournament in tournaments %}
+
+                <article class="th-card">
+
+                    <!-- IMAGE -->
+                    <div class="th-card-image">
+
+                        {% if tournament.image_url %}
+                        <img
+                            src="{{ tournament.image_url }}"
+                            alt="{{ tournament.name }}"
+                            loading="lazy"
+                        >
+                        {% else %}
+                        <div class="th-image-fallback">
+                            <span>🏆</span>
+                        </div>
+                        {% endif %}
+
+                        <span class="th-card-index">
+                            {{ forloop.counter|stringformat:"02d" }}
                         </span>
 
-                        <span>
-                            Location: {{ tournament.location }}
+                        <span class="th-status
+                            {% if tournament.status == 'Upcoming' %}th-upcoming
+                            {% elif tournament.status == 'Ongoing' %}th-ongoing
+                            {% else %}th-completed{% endif %}">
+                            {{ tournament.status }}
                         </span>
 
                     </div>
 
+
+                    <!-- CARD CONTENT -->
+                    <div class="th-card-content">
+
+                        <span class="th-card-label">
+                            ESPORTS COMPETITION
+                        </span>
+
+                        <h3>{{ tournament.name }}</h3>
+
+                        <div class="th-card-meta">
+
+                            <span>
+                                <span aria-hidden="true">🎮</span>
+                                {{ tournament.game.name }}
+                            </span>
+
+                            <span>
+                                <span aria-hidden="true">📍</span>
+                                {{ tournament.location }}
+                            </span>
+
+                        </div>
+
+                        <!-- INTERACTIVE DETAILS -->
+                        <details class="th-card-details">
+
+                            <summary>
+                                <span>View Details</span>
+                                <span class="th-details-icon" aria-hidden="true">
+                                    +
+                                </span>
+                            </summary>
+
+                            <div class="th-details-content">
+                                <p>{{ tournament.description }}</p>
+                            </div>
+
+                        </details>
+
+                    </div>
+
+                </article>
+
+                {% empty %}
+
+                <div class="th-empty">
+                    <span>🏆</span>
+                    <h3>No Tournaments Found</h3>
+                    <p>
+                        Try another search or change the filters.
+                    </p>
+
+                    <a href="{% url 'tournaments' %}"
+                       class="th-search-btn">
+                        Show All Tournaments
+                    </a>
                 </div>
 
-            </article>
+                {% endfor %}
 
-            {% empty %}
+            </div>
 
-            <div class="home-empty-state">
-                <h3>No Tournaments Found</h3>
+        </div>
+    </section>
+
+
+    <!-- COMPACT FOOTER CTA -->
+    <section class="th-cta">
+        <div class="container th-cta-inner">
+
+            <div>
+                <span class="th-eyebrow">
+                    BEYOND THE TOURNAMENTS
+                </span>
+
+                <h2>Discover Saudi Esports Achievements</h2>
+
                 <p>
-                    Try another search or change the filters.
+                    Explore the victories and historic moments
+                    behind the competitions.
                 </p>
             </div>
 
-            {% endfor %}
+            <a href="{% url 'achievements' %}" class="th-cta-link">
+                View Achievements
+                <span aria-hidden="true">↗</span>
+            </a>
 
         </div>
+    </section>
 
-    </div>
-</section>
+</main>
 
 {% endblock %}

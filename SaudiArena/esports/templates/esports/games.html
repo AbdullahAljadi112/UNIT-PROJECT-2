@@ -1,36 +1,66 @@
 
 {% extends "esports/base.html" %}
+{% load static %}
 
 {% block title %}Games | Saudi Arena{% endblock %}
 
 {% block content %}
 
-<section class="page-header">
+<!-- GAMES HERO -->
+<section class="games-hero">
     <div class="container">
-        <span class="section-label">EXPLORE THE GAMES</span>
-        <h1>COMPETITIVE GAMES</h1>
-        <p>Explore the games featured in Saudi esports.</p>
+        <div class="games-hero-content">
+            <span class="games-eyebrow">
+                🎮 SAUDI ARENA GAME LIBRARY
+            </span>
+
+            <h1>
+                THE WORLD OF
+                <span class="gradient-text">ESPORTS</span>
+            </h1>
+
+            <p>
+                Discover the competitive games that define
+                esports in Saudi Arabia. From tactical shooters
+                to football and high-speed battles.
+            </p>
+
+            <a href="#games-library" class="btn btn-primary">
+                🎮 Discover Games
+            </a>
+        </div>
     </div>
 </section>
 
-<section class="section">
+
+<!-- GAMES LIBRARY -->
+<section class="section games-library-section" id="games-library">
     <div class="container">
 
-        <div class="section-header">
-            <div>
-                <span class="section-label">GAME LIBRARY</span>
-                <h2>Discover Games</h2>
-                <p>From tactical shooters to competitive sports.</p>
-            </div>
+        <div class="games-section-heading">
+            <span class="section-label">
+                🕹️ GAME COLLECTION
+            </span>
+
+            <h2>
+                Explore Our
+                <span class="gradient-text">Games</span>
+            </h2>
+
+            <p>
+                Six competitive titles. Different worlds.
+                One passion for esports.
+            </p>
         </div>
 
-        <div class="teams-directory-grid">
+        <div class="games-cards-grid">
 
             {% for game in games %}
 
-            <article class="directory-team-card">
+            <article class="games-card">
 
-                <div class="directory-team-logo">
+                <!-- GAME IMAGE -->
+                <div class="games-card-image">
 
                     {% if game.image_url %}
                         <img
@@ -39,24 +69,35 @@
                             loading="lazy"
                         >
                     {% else %}
-                        <span>{{ game.name|first|upper }}</span>
+                        <div class="games-image-placeholder">
+                            🎮
+                        </div>
                     {% endif %}
+
+                    <span class="games-image-badge">
+                        🎮 ESPORTS
+                    </span>
 
                 </div>
 
-                <div class="directory-team-content">
+                <!-- GAME CONTENT -->
+                <div class="games-card-content">
 
-                    <span class="directory-team-label">
-                        {{ game.genre }}
-                    </span>
+                    {% if game.genre %}
+                        <span class="games-genre">
+                            🕹️ {{ game.genre }}
+                        </span>
+                    {% endif %}
 
                     <h3>{{ game.name }}</h3>
 
-                    <p>{{ game.description }}</p>
+                    <p class="games-description">
+                        {{ game.description }}
+                    </p>
 
-                    <div class="directory-team-footer">
-                        <span>COMPETITIVE GAMING</span>
-                        <span class="directory-team-star">★</span>
+                    <div class="games-card-footer">
+                        <span>🇸🇦 SAUDI ARENA</span>
+                        <span>★</span>
                     </div>
 
                 </div>
@@ -65,15 +106,45 @@
 
             {% empty %}
 
-            <div class="teams-empty-state">
-                <h3>No Games Available</h3>
-                <p>Games will be added soon.</p>
+            <div class="games-empty">
+                <span>🎮</span>
+                <h3>Games Coming Soon</h3>
+                <p>
+                    Our game library is being prepared.
+                </p>
             </div>
 
             {% endfor %}
 
         </div>
+    </div>
+</section>
 
+
+<!-- FINAL SECTION -->
+<section class="section games-final-section">
+    <div class="container">
+
+        <div class="games-final-card">
+
+            <span class="games-final-icon">🏆</span>
+
+            <span class="section-label">
+                BEYOND THE GAME
+            </span>
+
+            <h2>
+                MORE THAN
+                <span class="gradient-text">JUST A GAME</span>
+            </h2>
+
+            <p>
+                Every game has its champions, legendary moments,
+                and unforgettable competitions.
+                Discover the passion behind Saudi esports.
+            </p>
+
+        </div>
     </div>
 </section>
 

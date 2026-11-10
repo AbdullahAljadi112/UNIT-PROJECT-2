@@ -5,190 +5,259 @@
 
 {% block content %}
 
-<section class="about-hero">
+<main class="sa-about">
 
-    <img
-        src="{{ about.hero_image }}"
-        alt="Esports arena"
-        class="about-hero-image"
-    >
+    <!-- HERO -->
+    <section class="sa-about-hero">
 
-    <div class="about-hero-overlay"></div>
+        {% if about.hero_image %}
+        <img
+            src="{{ about.hero_image }}"
+            alt="Saudi esports arena"
+            class="sa-about-hero-img"
+        >
+        {% endif %}
 
-    <div class="container about-hero-content">
+        <div class="sa-about-hero-shade"></div>
 
-        <span class="about-eyebrow">
-            {{ about.eyebrow }}
-        </span>
+        <div class="container sa-about-hero-inner">
 
-        <h1>
-            {{ about.title }}
-        </h1>
+            <span class="sa-about-kicker">
+                {{ about.eyebrow }}
+            </span>
 
-        <p>
-            {{ about.subtitle }}
-        </p>
+            <h1>{{ about.title }}</h1>
 
-        <div class="about-hero-actions">
+            <p>{{ about.subtitle }}</p>
 
-            <a href="{% url 'tournaments' %}" class="btn btn-primary">
-                Explore Tournaments
-            </a>
+            <div class="sa-about-actions">
 
-            <a href="{% url 'teams' %}" class="btn btn-secondary">
-                Discover Teams
-            </a>
+                <a href="#our-story" class="sa-about-btn">
+                    Discover Our Story
+                    <span aria-hidden="true">↓</span>
+                </a>
 
-        </div>
+                <a
+                    href="{% url 'tournaments' %}"
+                    class="sa-about-outline-btn"
+                >
+                    Explore Tournaments
+                </a>
 
-    </div>
-
-</section>
-
-<section class="about-highlights">
-
-    <div class="container about-highlights-grid">
-
-        <div class="about-highlight">
-            <strong>SAUDI</strong>
-            <span>ESPORTS FOCUS</span>
-        </div>
-
-        <div class="about-highlight">
-            <strong>5</strong>
-            <span>CONTENT CATEGORIES</span>
-        </div>
-
-        <div class="about-highlight">
-            <strong>ONE</strong>
-            <span>GAMING COMMUNITY</span>
-        </div>
-
-    </div>
-
-</section>
-
-<section class="section about-story-section">
-
-    <div class="container about-story-grid">
-
-        <div class="about-story-image">
-
-            <img
-                src="{{ about.story_image }}"
-                alt="Competitive gaming"
-                loading="lazy"
-            >
-
-            <div class="about-image-label">
-                BUILT FOR THE GAME
             </div>
 
         </div>
 
-        <div class="about-story-content">
-
-            <span class="section-label">
-                {{ about.story_label }}
-            </span>
-
-            <h2>
-                {{ about.story_title }}
-            </h2>
-
-            <div class="about-accent-line"></div>
-
-            <p>
-                {{ about.story_text }}
-            </p>
-
-            <a href="{% url 'teams' %}" class="btn btn-primary">
-                Meet the Teams
-            </a>
-
+        <div class="sa-about-hero-caption">
+            <div class="container">
+                <span>SAUDI ARENA / ABOUT US</span>
+                <span>BUILT FOR THE GAME</span>
+            </div>
         </div>
 
-    </div>
+    </section>
 
-</section>
 
-<section class="section about-values-section">
+    <!-- QUICK INTRO -->
+    <section class="sa-about-intro">
 
-    <div class="container">
+        <div class="container sa-about-intro-inner">
 
-        <div class="about-section-heading">
+            <div class="sa-about-intro-title">
 
-            <span class="section-label">
-                WHAT DRIVES US
-            </span>
-
-            <h2>OUR CORE VALUES</h2>
-
-            <p>
-                The ideas behind Saudi Arena and
-                our passion for competitive gaming.
-            </p>
-
-        </div>
-
-        <div class="about-values-grid">
-
-            {% for value in about.values %}
-
-            <article class="about-value-card">
-
-                <span class="about-value-number">
-                    {{ value.number }}
+                <span class="sa-about-overline">
+                    WHO WE ARE
                 </span>
 
-                <h3>
-                    {{ value.title }}
-                </h3>
+                <h2>
+                    MORE THAN<br>
+                    <span>A GAME.</span>
+                </h2>
+
+            </div>
+
+            <div class="sa-about-intro-text">
 
                 <p>
-                    {{ value.description }}
+                    Saudi Arena is a digital platform
+                    dedicated to showcasing the growing
+                    world of Saudi esports.
                 </p>
 
-                <div class="about-value-line"></div>
+                <p>
+                    From competitive teams and talented
+                    players to major tournaments and
+                    historic achievements, we bring
+                    the esports scene together.
+                </p>
 
-            </article>
-
-            {% endfor %}
+            </div>
 
         </div>
 
-    </div>
+        <div class="container sa-about-facts">
 
-</section>
+            <div>
+                <strong>SAUDI</strong>
+                <span>ESPORTS FOCUS</span>
+            </div>
 
-<section class="about-cta-section">
+            <div>
+                <strong>05</strong>
+                <span>CONTENT CATEGORIES</span>
+            </div>
 
-    <div class="container">
+            <div>
+                <strong>ONE</strong>
+                <span>GAMING COMMUNITY</span>
+            </div>
 
-        <div class="about-cta-content">
+        </div>
 
-            <span class="about-eyebrow">
+    </section>
+
+
+    <!-- OUR STORY -->
+    <section class="sa-about-story" id="our-story">
+
+        <div class="container sa-about-story-inner">
+
+            <div class="sa-about-story-photo">
+
+                {% if about.story_image %}
+                <img
+                    src="{{ about.story_image }}"
+                    alt="Competitive esports gaming"
+                    loading="lazy"
+                >
+                {% endif %}
+
+                <span class="sa-about-photo-tag">
+                    THE STORY BEHIND THE ARENA
+                </span>
+
+            </div>
+
+            <div class="sa-about-story-copy">
+
+                <span class="sa-about-overline">
+                    {{ about.story_label }}
+                </span>
+
+                <h2>{{ about.story_title }}</h2>
+
+                <div class="sa-about-short-line"></div>
+
+                <p>{{ about.story_text }}</p>
+
+                <a
+                    href="{% url 'teams' %}"
+                    class="sa-about-text-link"
+                >
+                    MEET THE TEAMS
+                    <span aria-hidden="true">↗</span>
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- OUR CORE VALUES -->
+    <section class="sa-about-values">
+
+        <div class="container">
+
+            <div class="sa-about-values-heading">
+
+                <span class="sa-about-overline">
+                    WHAT DRIVES US
+                </span>
+
+                <h2>
+                    THE VALUES<br>
+                    <span>BEHIND THE ARENA.</span>
+                </h2>
+
+                <p>
+                    The principles that shape our
+                    passion for Saudi esports.
+                </p>
+
+            </div>
+
+            <div class="sa-about-values-list">
+
+                {% for value in about.values %}
+
+                <article class="sa-about-value-row">
+
+                    <span class="sa-about-value-index">
+                        {{ value.number }}
+                    </span>
+
+                    <div class="sa-about-value-content">
+
+                        <h3>{{ value.title }}</h3>
+
+                        <p>
+                            {{ value.description }}
+                        </p>
+
+                    </div>
+
+                    <span
+                        class="sa-about-value-mark"
+                        aria-hidden="true"
+                    >
+                        ✦
+                    </span>
+
+                </article>
+
+                {% endfor %}
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FINAL CTA -->
+    <section class="sa-about-ending">
+
+        <div class="container sa-about-ending-inner">
+
+            <span class="sa-about-overline">
                 YOUR ARENA AWAITS
             </span>
 
             <h2>
-                READY TO EXPLORE
-                THE WORLD OF ESPORTS?
+                THE FUTURE OF<br>
+                <span>SAUDI ESPORTS.</span>
             </h2>
 
             <p>
-                Discover the teams, competitions,
-                and games shaping Saudi esports.
+                Discover the people, teams, and
+                competitions shaping the next
+                generation of esports.
             </p>
 
-            <a href="{% url 'tournaments' %}" class="btn btn-primary">
-                Enter the Arena
+            <a
+                href="{% url 'tournaments' %}"
+                class="sa-about-btn"
+            >
+                ENTER THE ARENA
+                <span aria-hidden="true">↗</span>
             </a>
 
         </div>
 
-    </div>
+    </section>
 
-</section>
+</main>
 
 {% endblock %}
