@@ -25,22 +25,22 @@
 
             <div class="about-story-image">
                 {% if player.image_url %}
-                <img
-                    src="{{ player.image_url }}"
-                    alt="{{ player.name }}"
-                    style="object-fit:contain; background:#171026;"
-                >
+                    <img
+                        src="{{ player.image_url }}"
+                        alt="{{ player.name }}"
+                        style="object-fit:contain; background:#171026;"
+                    >
                 {% else %}
-                <div class="player-image-placeholder">
-                    {{ player.name|first|upper }}
-                </div>
+                    <div class="player-image-placeholder">
+                        {{ player.name|first|upper }}
+                    </div>
                 {% endif %}
             </div>
 
             <div class="about-story-content">
 
                 <span class="section-label">
-                    PROFESSIONAL ESPORTS PLAYER
+                    PLAYER SPOTLIGHT
                 </span>
 
                 <h2>{{ player.name }}</h2>
@@ -59,7 +59,6 @@
     </div>
 </section>
 
-<!-- PLAYER BIOGRAPHY -->
 <section class="section about-values-section">
     <div class="container">
 
@@ -77,65 +76,63 @@
     </div>
 </section>
 
-<!-- CHAMPIONSHIP VIDEO -->
-{% if player.highlight_video %}
-<section class="section player-highlights-section">
+{% if player.intro_video %}
+<section class="section player-intro-section">
     <div class="container">
 
         <div class="section-header">
-            <div>
-                <span class="section-label">
-                    CHAMPIONSHIP MOMENTS
+
+            <span class="section-label">
+                BEHIND THE PLAYER
+            </span>
+
+            <h2>
+                Meet
+                <span class="gradient-text">
+                    {{ player.name }}
                 </span>
+            </h2>
 
-                <h2>
-                    Victory <span class="gradient-text">Highlights</span>
-                </h2>
+            <p class="section-description">
+                Discover the story behind the player.
+            </p>
 
-                <p class="section-description">
-                    Relive the unforgettable moments
-                    from {{ player.name }}'s esports career.
-                </p>
-            </div>
         </div>
 
-        <div class="player-video-card">
+        <div class="player-intro-card">
 
-            <div class="player-video-wrapper">
+            <div class="player-intro-video">
 
                 <video
                     controls
-                    preload="metadata"
                     playsinline
-                    {% if player.highlight_poster %}
-                    poster="{{ player.highlight_poster }}"
+                    preload="metadata"
+                    aria-label="Introduction video of {{ player.name }}"
+                    {% if player.intro_poster %}
+                        poster="{{ player.intro_poster }}"
                     {% endif %}
                 >
                     <source
-                        src="{% static player.highlight_video %}"
+                        src="{% static player.intro_video %}"
                         type="video/mp4"
                     >
-
                     Your browser does not support video playback.
                 </video>
 
             </div>
 
-            <div class="player-video-info">
+           
+<div class="player-intro-details">
+    <span class="section-label">PLAYER INTRO</span>
 
-                <span class="section-label">
-                    ★ CHAMPIONSHIP HIGHLIGHT
-                </span>
+    <h3>Introducing {{ player.name }}</h3>
 
-                <h3>
-                    {{ player.highlight_title|default:"Victory Moment" }}
-                </h3>
+    <p>
+        A quick introduction to one of Saudi Arabia's
+        esports stars.
+    </p>
+</div>
 
-                <p>
-                    {{ player.highlight_description|default:"Watch a memorable championship moment." }}
-                </p>
-
-            </div>
 
         </div>
 
@@ -143,7 +140,6 @@
 </section>
 {% endif %}
 
-<!-- ACHIEVEMENTS -->
 <section class="section">
     <div class="container">
 
@@ -158,21 +154,21 @@
 
             {% for achievement in player.achievements %}
 
-            <article class="directory-team-card">
-                <div class="directory-team-content">
+                <article class="directory-team-card">
+                    <div class="directory-team-content">
 
-                    <span class="directory-team-label">
-                        ★ ACHIEVEMENT
-                    </span>
+                        <span class="directory-team-label">
+                            ★ ACHIEVEMENT
+                        </span>
 
-                    <h3>{{ achievement }}</h3>
+                        <h3>{{ achievement }}</h3>
 
-                </div>
-            </article>
+                    </div>
+                </article>
 
             {% empty %}
 
-            <p>No achievements listed yet.</p>
+                <p>No achievements listed yet.</p>
 
             {% endfor %}
 

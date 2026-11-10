@@ -98,6 +98,10 @@
                 "Champion - Saudi Women's eLeague Major 1 (2026)",
                 "Champion - Game Changers SEA Split 1 (2026)"
             ],
+
+            "intro_video": "esports/videos/madv-intro.mp4.mp4",
+            "intro_title": "Meet madv",
+
             "highlight_title": "Valorant Championship Moment",
             "highlight_description": "A memorable championship moment from madv's competitive Valorant career.",
             "featured": true
@@ -119,6 +123,10 @@
                 "Runner-up - RLCS World Championship 2025",
                 "Saudi Esports Male Player of the Year 2022"
             ],
+
+            "intro_video": "esports/videos/trk511-intro.mp4.mp4",
+            "intro_title": "Introducing trk511",
+
             "highlight_title": "RLCS Raleigh Major 2025 Victory",
             "highlight_description": "A championship celebration from trk511's Rocket League career.",
             "featured": true
@@ -141,6 +149,10 @@
                 "Champion - RLCS Raleigh Major 2025",
                 "Esports World Cup 2026 MVP"
             ],
+
+            "intro_video": "esports/videos/rw9-intro.mp4.mp4",
+            "intro_title": "Meet Rw9",
+
             "highlight_title": "Rocket League Championship Victory",
             "highlight_description": "Rw9 celebrates a major Rocket League championship.",
             "featured": true
@@ -163,6 +175,11 @@
                 "Champion - FIFAe World Cup 2024 with Saudi Arabia",
                 "Champion - RLCS Raleigh Major 2025"
             ],
+
+
+            "intro_video": "esports/videos/kiileerrz-intro.mp4.mp4",
+            "intro_title": "Meet Kiileerrz",
+
             "highlight_title": "Rocket League World Championship Victory",
             "highlight_description": "Kiileerrz celebrates a championship victory with his team.",
             "featured": true
@@ -182,6 +199,10 @@
                 "Champion - FIFA eWorld Cup 2018",
                 "Champion - FUT Champions Cup Manchester 2018"
             ],
+
+            "intro_video": "esports/videos/msdossary-intro.mp4",
+            "intro_title": "Meet Msdossary",
+
             "highlight_title": "FIFA eWorld Cup 2018 Victory",
             "highlight_description": "Msdossary celebrates his FIFA world championship victory in London.",
             "featured": true
@@ -190,18 +211,22 @@
             "name": "Exnid",
             "slug": "exnid",
             "nickname": "Exnid",
-            "real_name": "Saud Alotaibi",
+            "real_name": "Saud Al-tai",
             "team": "Falcons Academy Green",
             "game": "Call of Duty",
             "nationality": "Saudi Arabia",
             "role": "Professional Player",
             "image_url": "/static/esports/images/Endx.jpg",
-            "description": "Saud Alotaibi, known as Exnid, is a Saudi professional Call of Duty player. He has competed in the Call of Duty League and represented Falcons teams in professional competition.",
+            "description": "Saud Al-tai, known as Exnid, is a Saudi professional Call of Duty player. He has competed in the Call of Duty League and represented Falcons teams in professional competition.",
             "achievements": [
                 "Call of Duty League Competitor",
                 "Professional Player - Riyadh Falcons",
                 "Professional Player - Falcons Academy Green"
             ],
+
+            "intro_video": "esports/videos/exnid-intro.mp4.mp4",
+            "intro_title": "Introducing Exnid",
+
             "highlight_title": "Call of Duty Career Highlights",
             "highlight_description": "Highlights from Exnid's professional Call of Duty career.",
             "featured": true
