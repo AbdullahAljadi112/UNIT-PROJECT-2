@@ -232,5 +232,57 @@
             "featured": true
         }
     ],
-    "featured_achievements": []
+    
+    
+    "featured_achievements": [
+    {
+            "title": "Esports World Cup Club Champion 2024",
+            "year": 2024,
+            "team": "Team Falcons",
+            "game": "Multi-Game Esports",
+            "description": "Team Falcons made history by winning the inaugural Esports World Cup Club Championship in Riyadh, marking a major milestone for Saudi esports.",
+            "image_url": "/static/esports/images/ewc-2024-falcons.jpg.png"
+        },
+        {
+            "title": "Esports World Cup Club Champion 2025",
+            "year": 2025,
+            "team": "Team Falcons",
+            "game": "Multi-Game Esports",
+            "description": "Team Falcons defended their Esports World Cup Club Championship title, securing back-to-back victories on the global stage.",
+            "image_url": "/static/esports/images/ewc-2025-falcons.jpg.png"
+        },
+        {
+            "title": "FIFAe World Cup 2024 Champions",
+            "year": 2024,
+            "team": "Saudi Arabia National Team",
+            "game": "Rocket League",
+            "description": "Saudi Arabia celebrated an international Rocket League world title at the FIFAe World Cup 2024.",
+            "image_url": "/static/esports/images/fifae-2024-saudi.jpg.png"
+        },
+        {
+            "title": "RLCS Raleigh Major 2025 Champions",
+            "year": 2025,
+            "team": "Team Falcons",
+            "game": "Rocket League",
+            "description": "Team Falcons captured the RLCS Raleigh Major 2025 trophy, adding another prestigious international Rocket League title to Saudi esports history.",
+            "image_url": "/static/esports/images/rlcs-raleigh-2025.jpg.png"
+        },
+        {
+            "title": "Overwatch World Cup 2023 Champions",
+            "year": 2023,
+            "team": "Saudi Arabia National Team",
+            "game": "Overwatch 2",
+            "description": "Saudi Arabia made history by winning the Overwatch World Cup 2023 after defeating China in a thrilling grand final, securing a historic world title for Saudi esports.",
+            "image_url": "/static/esports/images/saudi-overwatch-2023.jpg.png"
+        },
+        {
+            "title": "FIFAe World Cup 2025 Runner-Up",
+            "year": 2025,
+            "team": "Saudi Arabia National Team",
+            "game": "Rocket League",
+            "description": "Saudi Arabia reached the FIFAe World Cup 2025 Rocket League grand final and finished as world runner-up, adding another major international achievement to the nation's esports history.",
+            "image_url": "/static/esports/images/saudi-fifae-2025.jpg.png"
+        }
+
+    ]
 }

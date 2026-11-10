@@ -160,14 +160,48 @@ def games(request):
     return render(request, "esports/games.html", context)
 
 
+
 def achievements(request):
     data = load_data()
 
+    achievements_list = data.get("featured_achievements", [])
+
+    achievements_list = sorted(
+        achievements_list,
+        key=lambda item: int(item.get("year", 0)),
+        reverse=True
+    )
+
+    total_achievements = len(achievements_list)
+
+    teams = {
+        item["team"]
+        for item in achievements_list
+        if item.get("team")
+    }
+
+    games = {
+        item["game"]
+        for item in achievements_list
+        if item.get("game")
+    }
+
+    years = {
+        item["year"]
+        for item in achievements_list
+        if item.get("year")
+    }
+
     context = {
-        "achievements": data.get("featured_achievements", [])
+        "achievements": achievements_list,
+        "total_achievements": total_achievements,
+        "total_teams": len(teams),
+        "total_games": len(games),
+        "total_years": len(years),
     }
 
     return render(request, "esports/achievements.html", context)
+
 
 from django.http import Http404
 

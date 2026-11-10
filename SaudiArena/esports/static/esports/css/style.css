@@ -2830,4 +2830,487 @@ button:focus-visible {
     }
 }
 
+.ach-hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 480px;
+    padding: 95px 0;
+    overflow: hidden;
+    background:
+        linear-gradient(90deg, rgba(9, 6, 25, .96), rgba(20, 10, 45, .74)),
+        url("/static/esports/images/esports-world-cup-concept.jpg")
+        center/cover no-repeat;
+}
+
+.ach-hero::after {
+    content: "";
+    position: absolute;
+    right: -100px;
+    bottom: -180px;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: rgba(145, 70, 255, .22);
+    filter: blur(90px);
+    pointer-events: none;
+}
+
+.ach-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 740px;
+}
+
+.ach-eyebrow {
+    display: inline-block;
+    margin-bottom: 22px;
+    padding: 9px 16px;
+    border: 1px solid rgba(255, 215, 100, .4);
+    border-radius: 30px;
+    background: rgba(255, 200, 70, .09);
+    color: #ffd76b;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.ach-hero h1 {
+    margin: 0 0 22px;
+    color: #fff;
+    font-size: clamp(38px, 6vw, 76px);
+    font-weight: 900;
+    line-height: 1.08;
+}
+
+.ach-hero h1 .gradient-text {
+    display: block;
+}
+
+.ach-hero p {
+    max-width: 590px;
+    margin-bottom: 28px;
+    color: #d4cde4;
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.ach-section-heading {
+    max-width: 750px;
+    margin: 0 auto 40px;
+    text-align: center;
+}
+
+.ach-section-heading h2 {
+    margin: 12px 0;
+    color: var(--text-primary);
+    font-size: clamp(29px, 4vw, 43px);
+}
+
+.ach-section-heading p {
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.ach-stats-section {
+    background: var(--bg-primary);
+}
+
+.ach-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.ach-stat-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 185px;
+    padding: 25px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    background: var(--bg-card);
+    text-align: center;
+    transition: transform .3s, border-color .3s;
+}
+
+.ach-stat-card:hover {
+    transform: translateY(-7px);
+    border-color: #b68aff;
+}
+
+.ach-stat-icon {
+    margin-bottom: 12px;
+    font-size: 35px;
+}
+
+.ach-stat-card strong {
+    color: var(--text-primary);
+    font-size: 43px;
+    line-height: 1.2;
+}
+
+.ach-stat-card > span:last-child {
+    margin-top: 9px;
+    color: var(--text-secondary);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.ach-victories-section {
+    background: var(--bg-primary);
+}
+
+.ach-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 26px;
+}
+
+.ach-card {
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    border-radius: 22px;
+    background: var(--bg-card);
+    transition: transform .3s, box-shadow .3s, border-color .3s;
+}
+
+.ach-card:hover {
+    transform: translateY(-8px);
+    border-color: #a36cff;
+    box-shadow: 0 20px 45px rgba(100, 55, 190, .16);
+}
+
+.ach-card-image {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+    background: #160e2a;
+}
+
+.ach-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .5s;
+}
+
+.ach-card:hover .ach-card-image img {
+    transform: scale(1.07);
+}
+
+.ach-image-placeholder {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 75px;
+    background: linear-gradient(135deg, #25113d, #6236a1);
+}
+
+.ach-image-badge,
+.ach-year-badge {
+    position: absolute;
+    z-index: 1;
+    padding: 8px 12px;
+    border-radius: 20px;
+    background: rgba(12, 9, 28, .82);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    backdrop-filter: blur(8px);
+}
+
+.ach-image-badge {
+    top: 15px;
+    left: 15px;
+    color: #ffdc76;
+}
+
+.ach-year-badge {
+    top: 15px;
+    right: 15px;
+}
+
+.ach-card-content {
+    padding: 24px;
+}
+
+.ach-game-label {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: #b18aff;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .6px;
+}
+
+.ach-card-content h3 {
+    margin: 0 0 12px;
+    color: var(--text-primary);
+    font-size: 22px;
+    line-height: 1.35;
+}
+
+.ach-team {
+    margin-bottom: 12px;
+    color: var(--text-primary);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.ach-description {
+    min-height: 95px;
+    color: var(--text-secondary);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.ach-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.ach-timeline-section {
+    background: var(--bg-primary);
+}
+
+.ach-timeline {
+    position: relative;
+    max-width: 850px;
+    margin: 0 auto;
+    padding-left: 50px;
+}
+
+.ach-timeline::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    bottom: 20px;
+    left: 17px;
+    width: 3px;
+    border-radius: 4px;
+    background: linear-gradient(#a36cff, #ffd76b);
+}
+
+.ach-timeline-item {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.ach-timeline-dot {
+    position: absolute;
+    top: 18px;
+    left: -50px;
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    border: 2px solid #a36cff;
+    border-radius: 50%;
+    background: var(--bg-card);
+    font-size: 17px;
+}
+
+.ach-timeline-content {
+    padding: 24px;
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    background: var(--bg-card);
+    transition: border-color .3s;
+}
+
+.ach-timeline-content:hover {
+    border-color: #a36cff;
+}
+
+.ach-timeline-year {
+    color: #a36cff;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.ach-timeline-content h3 {
+    margin: 9px 0;
+    color: var(--text-primary);
+    font-size: 20px;
+}
+
+.ach-timeline-content p {
+    color: var(--text-secondary);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.ach-timeline-team {
+    display: inline-block;
+    margin-top: 12px;
+    color: var(--text-primary);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.ach-final-section {
+    background: var(--bg-primary);
+}
+
+.ach-final-card {
+    position: relative;
+    overflow: hidden;
+    padding: 65px 25px;
+    border: 1px solid var(--border-color);
+    border-radius: 26px;
+    background: var(--bg-card);
+    text-align: center;
+}
+
+.ach-final-trophy {
+    display: block;
+    margin-bottom: 18px;
+    font-size: 60px;
+}
+
+.ach-final-card h2 {
+    margin: 12px 0;
+    color: var(--text-primary);
+    font-size: clamp(30px, 5vw, 48px);
+}
+
+.ach-final-card p {
+    max-width: 550px;
+    margin: 0 auto 26px;
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.ach-empty {
+    grid-column: 1 / -1;
+    padding: 60px 20px;
+    text-align: center;
+    color: var(--text-secondary);
+}
+
+.ach-empty > span {
+    font-size: 60px;
+}
+
+.ach-empty h3 {
+    margin: 15px 0;
+    color: var(--text-primary);
+}
+
+[data-theme="light"] .ach-game-label,
+[data-theme="light"] .ach-timeline-year {
+    color: #7540ba;
+}
+
+@media (max-width: 950px) {
+    .ach-stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .ach-cards-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .ach-hero {
+        min-height: 400px;
+        padding: 65px 0;
+    }
+
+    .ach-hero h1 {
+        font-size: 40px;
+    }
+
+    .ach-hero p {
+        font-size: 13px;
+    }
+
+    .ach-stats-grid {
+        gap: 12px;
+    }
+
+    .ach-stat-card {
+        min-height: 150px;
+        padding: 18px 10px;
+    }
+
+    .ach-stat-card strong {
+        font-size: 34px;
+    }
+
+    .ach-cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ach-card-image {
+        height: 230px;
+    }
+
+    .ach-description {
+        min-height: 0;
+    }
+
+    .ach-timeline {
+        padding-left: 42px;
+    }
+
+    .ach-timeline-dot {
+        left: -42px;
+    }
+
+    .ach-timeline::before {
+        left: 17px;
+    }
+
+    .ach-final-card {
+        padding: 45px 18px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ach-card,
+    .ach-card-image img,
+    .ach-stat-card {
+        transition: none;
+    }
+}
+
+.ach-status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 13px;
+    border-radius: 30px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.ach-status-gold {
+    background: rgba(255, 196, 0, 0.15);
+    color: #f5bc25;
+    border: 1px solid rgba(255, 196, 0, 0.4);
+}
+
+.ach-status-silver {
+    background: rgba(180, 195, 215, 0.15);
+    color: #cbd5e1;
+    border: 1px solid rgba(180, 195, 215, 0.4);
+}
+
 
