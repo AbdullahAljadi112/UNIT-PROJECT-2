@@ -1,7 +1,8 @@
 
 {% extends "esports/base.html" %}
+{% load i18n %}
 
-{% block title %}Tournaments | Saudi Arena{% endblock %}
+{% block title %}{% trans "Tournaments" %} | Saudi Arena{% endblock %}
 
 {% block content %}
 
@@ -13,22 +14,25 @@
 
             <div class="th-header-copy">
                 <span class="th-eyebrow">
-                    SAUDI ARENA / COMPETITIONS
+                    {% trans "SAUDI ARENA / COMPETITIONS" %}
                 </span>
 
                 <h1>
-                    ESPORTS <span>TOURNAMENTS</span>
+                    {% trans "ESPORTS" %}
+                    <span>{% trans "TOURNAMENTS" %}</span>
                 </h1>
 
                 <p>
+                    {% blocktrans trimmed %}
                     Explore the championships and competitions
                     shaping the world of esports.
+                    {% endblocktrans %}
                 </p>
             </div>
 
             <div class="th-header-count">
                 <strong>{{ tournaments|length|stringformat:"02d" }}</strong>
-                <span>TOURNAMENTS</span>
+                <span>{% trans "TOURNAMENTS" %}</span>
             </div>
 
         </div>
@@ -42,8 +46,10 @@
             <div class="th-toolbar">
 
                 <div class="th-toolbar-title">
-                    <span class="th-eyebrow">DISCOVER EVENTS</span>
-                    <h2>Explore Competitions</h2>
+                    <span class="th-eyebrow">
+                        {% trans "DISCOVER EVENTS" %}
+                    </span>
+                    <h2>{% trans "Explore Competitions" %}</h2>
                 </div>
 
                 <form method="get" class="th-filters">
@@ -51,39 +57,41 @@
                     <input
                         type="search"
                         name="search"
-                        placeholder="Search tournaments or games..."
+                        placeholder="{% trans 'Search tournaments or games...' %}"
                         value="{{ search_query|default:'' }}"
-                        aria-label="Search tournaments"
+                        aria-label="{% trans 'Search tournaments' %}"
                     >
 
                     <select
                         name="status"
-                        aria-label="Filter tournaments by status"
+                        aria-label="{% trans 'Filter tournaments by status' %}"
                     >
-                        <option value="">All Statuses</option>
+                        <option value="">
+                            {% trans "All Statuses" %}
+                        </option>
 
                         <option value="Upcoming"
                             {% if selected_status == "Upcoming" %}selected{% endif %}>
-                            Upcoming
+                            {% trans "Upcoming" %}
                         </option>
 
                         <option value="Ongoing"
                             {% if selected_status == "Ongoing" %}selected{% endif %}>
-                            Ongoing
+                            {% trans "Ongoing" %}
                         </option>
 
                         <option value="Completed"
                             {% if selected_status == "Completed" %}selected{% endif %}>
-                            Completed
+                            {% trans "Completed" %}
                         </option>
                     </select>
 
                     <button type="submit" class="th-search-btn">
-                        Search
+                        {% trans "Search" %}
                     </button>
 
                     <a href="{% url 'tournaments' %}" class="th-reset-btn">
-                        Reset
+                        {% trans "Reset" %}
                     </a>
 
                 </form>
@@ -121,7 +129,7 @@
                             {% if tournament.status == 'Upcoming' %}th-upcoming
                             {% elif tournament.status == 'Ongoing' %}th-ongoing
                             {% else %}th-completed{% endif %}">
-                            {{ tournament.status }}
+                            {% trans tournament.status %}
                         </span>
 
                     </div>
@@ -131,21 +139,21 @@
                     <div class="th-card-content">
 
                         <span class="th-card-label">
-                            ESPORTS COMPETITION
+                            {% trans "ESPORTS COMPETITION" %}
                         </span>
 
-                        <h3>{{ tournament.name }}</h3>
+                        <h3>{% trans tournament.name %}</h3>
 
                         <div class="th-card-meta">
 
                             <span>
                                 <span aria-hidden="true">🎮</span>
-                                {{ tournament.game.name }}
+                                {% trans tournament.game.name %}
                             </span>
 
                             <span>
                                 <span aria-hidden="true">📍</span>
-                                {{ tournament.location }}
+                                {% trans tournament.location %}
                             </span>
 
                         </div>
@@ -154,14 +162,14 @@
                         <details class="th-card-details">
 
                             <summary>
-                                <span>View Details</span>
+                                <span>{% trans "View Details" %}</span>
                                 <span class="th-details-icon" aria-hidden="true">
                                     +
                                 </span>
                             </summary>
 
                             <div class="th-details-content">
-                                <p>{{ tournament.description }}</p>
+                                <p>{% trans tournament.description %}</p>
                             </div>
 
                         </details>
@@ -174,14 +182,16 @@
 
                 <div class="th-empty">
                     <span>🏆</span>
-                    <h3>No Tournaments Found</h3>
+
+                    <h3>{% trans "No Tournaments Found" %}</h3>
+
                     <p>
-                        Try another search or change the filters.
+                        {% trans "Try another search or change the filters." %}
                     </p>
 
                     <a href="{% url 'tournaments' %}"
                        class="th-search-btn">
-                        Show All Tournaments
+                        {% trans "Show All Tournaments" %}
                     </a>
                 </div>
 
@@ -199,19 +209,23 @@
 
             <div>
                 <span class="th-eyebrow">
-                    BEYOND THE TOURNAMENTS
+                    {% trans "BEYOND THE TOURNAMENTS" %}
                 </span>
 
-                <h2>Discover Saudi Esports Achievements</h2>
+                <h2>
+                    {% trans "Discover Saudi Esports Achievements" %}
+                </h2>
 
                 <p>
+                    {% blocktrans trimmed %}
                     Explore the victories and historic moments
                     behind the competitions.
+                    {% endblocktrans %}
                 </p>
             </div>
 
             <a href="{% url 'achievements' %}" class="th-cta-link">
-                View Achievements
+                {% trans "View Achievements" %}
                 <span aria-hidden="true">↗</span>
             </a>
 

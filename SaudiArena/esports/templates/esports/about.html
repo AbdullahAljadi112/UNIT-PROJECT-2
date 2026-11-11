@@ -1,7 +1,8 @@
 
 {% extends "esports/base.html" %}
+{% load i18n %}
 
-{% block title %}About Us | Saudi Arena{% endblock %}
+{% block title %}{% trans "About Us" %} | Saudi Arena{% endblock %}
 
 {% block content %}
 
@@ -23,25 +24,23 @@
         <div class="container sa-about-hero-inner">
 
             <span class="sa-about-kicker">
-                {{ about.eyebrow }}
+                {% trans about.eyebrow %}
             </span>
 
-            <h1>{{ about.title }}</h1>
+            <h1>{% trans about.title %}</h1>
 
-            <p>{{ about.subtitle }}</p>
+            <p>{% trans about.subtitle %}</p>
 
             <div class="sa-about-actions">
 
                 <a href="#our-story" class="sa-about-btn">
-                    Discover Our Story
+                    {% trans "Discover Our Story" %}
                     <span aria-hidden="true">↓</span>
                 </a>
 
-                <a
-                    href="{% url 'tournaments' %}"
-                    class="sa-about-outline-btn"
-                >
-                    Explore Tournaments
+                <a href="{% url 'tournaments' %}"
+                   class="sa-about-outline-btn">
+                    {% trans "Explore Tournaments" %}
                 </a>
 
             </div>
@@ -50,13 +49,12 @@
 
         <div class="sa-about-hero-caption">
             <div class="container">
-                <span>SAUDI ARENA / ABOUT US</span>
-                <span>BUILT FOR THE GAME</span>
+                <span>{% trans "SAUDI ARENA / ABOUT US" %}</span>
+                <span>{% trans "BUILT FOR THE GAME" %}</span>
             </div>
         </div>
 
     </section>
-
 
     <!-- QUICK INTRO -->
     <section class="sa-about-intro">
@@ -66,12 +64,12 @@
             <div class="sa-about-intro-title">
 
                 <span class="sa-about-overline">
-                    WHO WE ARE
+                    {% trans "WHO WE ARE" %}
                 </span>
 
                 <h2>
-                    MORE THAN<br>
-                    <span>A GAME.</span>
+                    {% trans "MORE THAN" %}<br>
+                    <span>{% trans "A GAME." %}</span>
                 </h2>
 
             </div>
@@ -79,16 +77,20 @@
             <div class="sa-about-intro-text">
 
                 <p>
+                    {% blocktrans trimmed %}
                     Saudi Arena is a digital platform
                     dedicated to showcasing the growing
                     world of Saudi esports.
+                    {% endblocktrans %}
                 </p>
 
                 <p>
+                    {% blocktrans trimmed %}
                     From competitive teams and talented
                     players to major tournaments and
                     historic achievements, we bring
                     the esports scene together.
+                    {% endblocktrans %}
                 </p>
 
             </div>
@@ -98,24 +100,23 @@
         <div class="container sa-about-facts">
 
             <div>
-                <strong>SAUDI</strong>
-                <span>ESPORTS FOCUS</span>
+                <strong>{% trans "SAUDI" %}</strong>
+                <span>{% trans "ESPORTS FOCUS" %}</span>
             </div>
 
             <div>
                 <strong>05</strong>
-                <span>CONTENT CATEGORIES</span>
+                <span>{% trans "CONTENT CATEGORIES" %}</span>
             </div>
 
             <div>
-                <strong>ONE</strong>
-                <span>GAMING COMMUNITY</span>
+                <strong>{% trans "ONE" %}</strong>
+                <span>{% trans "GAMING COMMUNITY" %}</span>
             </div>
 
         </div>
 
     </section>
-
 
     <!-- OUR STORY -->
     <section class="sa-about-story" id="our-story">
@@ -133,7 +134,7 @@
                 {% endif %}
 
                 <span class="sa-about-photo-tag">
-                    THE STORY BEHIND THE ARENA
+                    {% trans "THE STORY BEHIND THE ARENA" %}
                 </span>
 
             </div>
@@ -141,20 +142,18 @@
             <div class="sa-about-story-copy">
 
                 <span class="sa-about-overline">
-                    {{ about.story_label }}
+                    {% trans about.story_label %}
                 </span>
 
-                <h2>{{ about.story_title }}</h2>
+                <h2>{% trans about.story_title %}</h2>
 
                 <div class="sa-about-short-line"></div>
 
-                <p>{{ about.story_text }}</p>
+                <p>{% trans about.story_text %}</p>
 
-                <a
-                    href="{% url 'teams' %}"
-                    class="sa-about-text-link"
-                >
-                    MEET THE TEAMS
+                <a href="{% url 'teams' %}"
+                   class="sa-about-text-link">
+                    {% trans "MEET THE TEAMS" %}
                     <span aria-hidden="true">↗</span>
                 </a>
 
@@ -164,7 +163,6 @@
 
     </section>
 
-
     <!-- OUR CORE VALUES -->
     <section class="sa-about-values">
 
@@ -173,17 +171,19 @@
             <div class="sa-about-values-heading">
 
                 <span class="sa-about-overline">
-                    WHAT DRIVES US
+                    {% trans "WHAT DRIVES US" %}
                 </span>
 
                 <h2>
-                    THE VALUES<br>
-                    <span>BEHIND THE ARENA.</span>
+                    {% trans "THE VALUES" %}<br>
+                    <span>{% trans "BEHIND THE ARENA." %}</span>
                 </h2>
 
                 <p>
+                    {% blocktrans trimmed %}
                     The principles that shape our
                     passion for Saudi esports.
+                    {% endblocktrans %}
                 </p>
 
             </div>
@@ -200,18 +200,14 @@
 
                     <div class="sa-about-value-content">
 
-                        <h3>{{ value.title }}</h3>
+                        <h3>{% trans value.title %}</h3>
 
-                        <p>
-                            {{ value.description }}
-                        </p>
+                        <p>{% trans value.description %}</p>
 
                     </div>
 
-                    <span
-                        class="sa-about-value-mark"
-                        aria-hidden="true"
-                    >
+                    <span class="sa-about-value-mark"
+                          aria-hidden="true">
                         ✦
                     </span>
 
@@ -225,32 +221,31 @@
 
     </section>
 
-
     <!-- FINAL CTA -->
     <section class="sa-about-ending">
 
         <div class="container sa-about-ending-inner">
 
             <span class="sa-about-overline">
-                YOUR ARENA AWAITS
+                {% trans "YOUR ARENA AWAITS" %}
             </span>
 
             <h2>
-                THE FUTURE OF<br>
-                <span>SAUDI ESPORTS.</span>
+                {% trans "THE FUTURE OF" %}<br>
+                <span>{% trans "SAUDI ESPORTS." %}</span>
             </h2>
 
             <p>
+                {% blocktrans trimmed %}
                 Discover the people, teams, and
                 competitions shaping the next
                 generation of esports.
+                {% endblocktrans %}
             </p>
 
-            <a
-                href="{% url 'tournaments' %}"
-                class="sa-about-btn"
-            >
-                ENTER THE ARENA
+            <a href="{% url 'tournaments' %}"
+               class="sa-about-btn">
+                {% trans "ENTER THE ARENA" %}
                 <span aria-hidden="true">↗</span>
             </a>
 

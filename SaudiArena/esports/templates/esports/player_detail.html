@@ -1,81 +1,127 @@
 
 {% extends "esports/base.html" %}
-{% load static %}
+{% load static i18n %}
 
-{% block title %}{{ player.name }} | Saudi Arena{% endblock %}
+{% block title %}{% trans player.name %} | Saudi Arena{% endblock %}
 
 {% block content %}
 
+<!-- PLAYER HEADER -->
 <section class="page-header">
     <div class="container">
-        <span class="section-label">PLAYER PROFILE</span>
-        <h1>{{ player.name }}</h1>
-        <p>{{ player.real_name }} | {{ player.game }}</p>
-    </div>
-</section>
 
-<section class="section">
-    <div class="container">
+        <span class="section-label">
+            {% trans "PLAYER PROFILE" %}
+        </span>
 
-        <a href="{% url 'players' %}" class="btn btn-secondary">
-            ← Back to Players
-        </a>
+        <h1>{% trans player.name %}</h1>
 
-        <div class="about-story-grid" style="margin-top:40px;">
-
-            <div class="about-story-image">
-                {% if player.image_url %}
-                    <img
-                        src="{{ player.image_url }}"
-                        alt="{{ player.name }}"
-                        style="object-fit:contain; background:#171026;"
-                    >
-                {% else %}
-                    <div class="player-image-placeholder">
-                        {{ player.name|first|upper }}
-                    </div>
-                {% endif %}
-            </div>
-
-            <div class="about-story-content">
-
-                <span class="section-label">
-                    PLAYER SPOTLIGHT
-                </span>
-
-                <h2>{{ player.name }}</h2>
-
-                <div class="about-accent-line"></div>
-
-                <p><strong>Real Name:</strong> {{ player.real_name }}</p>
-                <p><strong>Team:</strong> {{ player.team }}</p>
-                <p><strong>Game:</strong> {{ player.game }}</p>
-                <p><strong>Nationality:</strong> {{ player.nationality }}</p>
-                <p><strong>Role:</strong> {{ player.role }}</p>
-
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<section class="section about-values-section">
-    <div class="container">
-
-        <div class="section-header">
-            <div>
-                <span class="section-label">THE JOURNEY</span>
-                <h2>About {{ player.name }}</h2>
-            </div>
-        </div>
-
-        <p class="player-biography">
-            {{ player.description }}
+        <p>
+            {% trans player.real_name %} |
+            {% trans player.game %}
         </p>
 
     </div>
 </section>
 
+
+<!-- PLAYER PROFILE -->
+<section class="section">
+    <div class="container">
+
+        <a href="{% url 'players' %}" class="btn btn-secondary">
+            {% if LANGUAGE_CODE == 'ar' %}→{% else %}←{% endif %}
+            {% trans "Back to Players" %}
+        </a>
+
+        <div class="player-profile-grid">
+
+            <!-- PLAYER IMAGE -->
+            <div class="player-profile-image">
+
+                {% if player.image_url %}
+                <img
+                    src="{{ player.image_url }}"
+                    alt="{{ player.name }}"
+                >
+                {% else %}
+                <div class="player-image-placeholder">
+                    {{ player.name|first|upper }}
+                </div>
+                {% endif %}
+
+            </div>
+
+            <!-- PLAYER INFORMATION -->
+            <div class="player-profile-info">
+
+                <span class="section-label">
+                    {% trans "PLAYER SPOTLIGHT" %}
+                </span>
+
+                <h2>{% trans player.name %}</h2>
+
+                <div class="about-accent-line"></div>
+
+                <p>
+                    <strong>{% trans "Real Name:" %}</strong>
+                    {% trans player.real_name %}
+                </p>
+
+                <p>
+                    <strong>{% trans "Team:" %}</strong>
+                    {% trans player.team %}
+                </p>
+
+                <p>
+                    <strong>{% trans "Game:" %}</strong>
+                    {% trans player.game %}
+                </p>
+
+                <p>
+                    <strong>{% trans "Nationality:" %}</strong>
+                    {% trans player.nationality %}
+                </p>
+
+                <p>
+                    <strong>{% trans "Role:" %}</strong>
+                    {% trans player.role %}
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- PLAYER BIOGRAPHY -->
+<section class="section about-values-section">
+    <div class="container">
+
+        <div class="section-header">
+            <div>
+                <span class="section-label">
+                    {% trans "THE JOURNEY" %}
+                </span>
+
+                <h2>
+                    {% trans "About" %}
+                    {% trans player.name %}
+                </h2>
+            </div>
+        </div>
+
+        <p class="player-biography">
+            {% trans player.description %}
+        </p>
+
+    </div>
+</section>
+
+
+<!-- PLAYER INTRO VIDEO -->
 {% if player.intro_video %}
 <section class="section player-intro-section">
     <div class="container">
@@ -83,98 +129,68 @@
         <div class="section-header">
 
             <span class="section-label">
-                BEHIND THE PLAYER
+                {% trans "BEHIND THE PLAYER" %}
             </span>
 
             <h2>
-                Meet
+                {% trans "Meet" %}
                 <span class="gradient-text">
-                    {{ player.name }}
+                    {% trans player.name %}
                 </span>
             </h2>
 
             <p class="section-description">
-                Discover the story behind the player.
+                {% trans "Discover the story behind the player." %}
             </p>
 
         </div>
 
         <div class="player-intro-card">
 
+            <!-- VIDEO -->
             <div class="player-intro-video">
 
                 <video
                     controls
                     playsinline
                     preload="metadata"
-                    aria-label="Introduction video of {{ player.name }}"
+                    aria-label="{% trans 'Player introduction video' %}"
                     {% if player.intro_poster %}
-                        poster="{{ player.intro_poster }}"
+                    poster="{{ player.intro_poster }}"
                     {% endif %}
                 >
                     <source
                         src="{% static player.intro_video %}"
                         type="video/mp4"
                     >
-                    Your browser does not support video playback.
+
+                    {% trans "Your browser does not support video playback." %}
                 </video>
 
             </div>
 
-           
-<div class="player-intro-details">
-    <span class="section-label">PLAYER INTRO</span>
+            <!-- VIDEO INFORMATION -->
+            <div class="player-intro-details">
 
-    <h3>Introducing {{ player.name }}</h3>
+                <span class="section-label">
+                    {% trans "PLAYER INTRO" %}
+                </span>
 
-    <p>
-        A quick introduction to one of Saudi Arabia's
-        esports stars.
-    </p>
-</div>
+                <h3>
+                    {% trans "Introducing" %}
+                    {% trans player.name %}
+                </h3>
 
+                <p>
+                    {% trans "A quick introduction to one of Saudi Arabia's esports stars." %}
+                </p>
+
+            </div>
 
         </div>
 
     </div>
 </section>
 {% endif %}
-
-<section class="section">
-    <div class="container">
-
-        <div class="section-header">
-            <div>
-                <span class="section-label">HALL OF FAME</span>
-                <h2>Career Achievements</h2>
-            </div>
-        </div>
-
-        <div class="teams-directory-grid">
-
-            {% for achievement in player.achievements %}
-
-                <article class="directory-team-card">
-                    <div class="directory-team-content">
-
-                        <span class="directory-team-label">
-                            ★ ACHIEVEMENT
-                        </span>
-
-                        <h3>{{ achievement }}</h3>
-
-                    </div>
-                </article>
-
-            {% empty %}
-
-                <p>No achievements listed yet.</p>
-
-            {% endfor %}
-
-        </div>
-
-    </div>
-</section>
 
 {% endblock %}

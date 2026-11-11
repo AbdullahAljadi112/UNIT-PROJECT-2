@@ -1,8 +1,8 @@
 
 {% extends "esports/base.html" %}
-{% load static %}
+{% load static i18n %}
 
-{% block title %}Teams | Saudi Arena{% endblock %}
+{% block title %}{% trans "Teams" %} | Saudi Arena{% endblock %}
 
 {% block content %}
 
@@ -12,7 +12,7 @@
     {% if teams_page.hero_image %}
     <img
         src="{{ teams_page.hero_image }}"
-        alt="Saudi esports competition arena"
+        alt="{% trans 'Saudi esports competition arena' %}"
         class="teams-pro-hero-image"
     >
     {% endif %}
@@ -22,28 +22,30 @@
     <div class="container teams-pro-hero-content">
 
         <span class="teams-pro-eyebrow">
-            🇸🇦 THE SPIRIT OF COMPETITION
+            🇸🇦 {% trans "THE SPIRIT OF COMPETITION" %}
         </span>
 
         <h1>
-            LEGENDS ARE<br>
-            <span>BUILT TOGETHER.</span>
+            {% trans "LEGENDS ARE" %}<br>
+            <span>{% trans "BUILT TOGETHER." %}</span>
         </h1>
 
         <p>
+            {% blocktrans trimmed %}
             Discover the organizations, competitors,
             and teams shaping the future of Saudi esports.
+            {% endblocktrans %}
         </p>
 
         <a href="#explore-teams" class="btn btn-primary">
-            👑 Explore Teams
+            👑 {% trans "Explore Teams" %}
         </a>
 
     </div>
 
     <div class="teams-pro-hero-bottom">
         <span>SAUDI ARENA</span>
-        <span>ESPORTS / TEAMS</span>
+        <span>{% trans "ESPORTS / TEAMS" %}</span>
     </div>
 
 </section>
@@ -56,19 +58,21 @@
 
         <div>
             <span class="section-label">
-                THE COMPETITIVE SCENE
+                {% trans "THE COMPETITIVE SCENE" %}
             </span>
 
             <h2>
-                ONE ARENA.<br>
-                <span>ENDLESS AMBITION.</span>
+                {% trans "ONE ARENA." %}<br>
+                <span>{% trans "ENDLESS AMBITION." %}</span>
             </h2>
         </div>
 
         <p>
+            {% blocktrans trimmed %}
             Behind every great esports moment is a team
             driven by dedication, strategy, and teamwork.
             Explore the organizations featured on Saudi Arena.
+            {% endblocktrans %}
         </p>
 
     </div>
@@ -85,20 +89,21 @@
 
             <div>
                 <span class="section-label">
-                    👑 THE ROSTER
+                    👑 {% trans "THE ROSTER" %}
                 </span>
 
                 <h2>
-                    EXPLORE <span>TEAMS</span>
+                    {% trans "EXPLORE" %}
+                    <span>{% trans "TEAMS" %}</span>
                 </h2>
 
                 <p class="teams-pro-subtitle">
-                    Meet the organizations powering Saudi gaming.
+                    {% trans "Meet the organizations powering Saudi gaming." %}
                 </p>
             </div>
 
             <span class="teams-pro-count">
-                🏆 {{ total_teams }} RESULTS
+                🏆 {{ total_teams }} {% trans "RESULTS" %}
             </span>
 
         </div>
@@ -110,17 +115,17 @@
             <input
                 type="search"
                 name="search"
-                placeholder="Search for a team..."
+                placeholder="{% trans 'Search for a team...' %}"
                 value="{{ search_query|default:'' }}"
-                aria-label="Search teams"
+                aria-label="{% trans 'Search teams' %}"
             >
 
             <button type="submit" class="btn btn-primary">
-                🔎 Search Teams
+                🔎 {% trans "Search Teams" %}
             </button>
 
             <a href="{% url 'teams' %}" class="btn btn-secondary">
-                Reset
+                {% trans "Reset" %}
             </a>
 
         </form>
@@ -147,7 +152,7 @@
                     <div class="teams-pro-card-shade"></div>
 
                     <span class="teams-pro-card-tag">
-                        🇸🇦 SAUDI ORGANIZATION
+                        🇸🇦 {% trans "SAUDI ORGANIZATION" %}
                     </span>
 
                     <span class="teams-pro-card-number">
@@ -161,7 +166,7 @@
 
                         <img
                             src="{{ team.logo_url }}"
-                            alt="{{ team.name }} logo"
+                            alt="{{ team.name }}"
                             loading="lazy"
                         >
 
@@ -182,12 +187,12 @@
                 <div class="teams-pro-card-body">
 
                     <span class="teams-pro-card-category">
-                        🎮 SAUDI ESPORTS
+                        🎮 {% trans "SAUDI ESPORTS" %}
                     </span>
 
-                    <h3>{{ team.name }}</h3>
+                    <h3>{% trans team.name %}</h3>
 
-                    <p>{{ team.description }}</p>
+                    <p>{% trans team.description %}</p>
 
                     <div class="teams-pro-card-footer">
                         <span>🇸🇦 SAUDI ARENA</span>
@@ -201,11 +206,11 @@
             {% empty %}
 
             <div class="teams-pro-empty">
-                <h3>No teams found</h3>
-                <p>Try another team name.</p>
+                <h3>{% trans "No teams found" %}</h3>
+                <p>{% trans "Try another team name." %}</p>
 
                 <a href="{% url 'teams' %}" class="btn btn-primary">
-                    Show All Teams
+                    {% trans "Show All Teams" %}
                 </a>
             </div>
 
@@ -224,21 +229,23 @@
     <div class="container teams-pro-cta-inner">
 
         <span class="section-label">
-            🏆 BE PART OF THE ACTION
+            🏆 {% trans "BE PART OF THE ACTION" %}
         </span>
 
         <h2>
-            THE NEXT MATCH<br>
-            STARTS HERE.
+            {% trans "THE NEXT MATCH" %}<br>
+            {% trans "STARTS HERE." %}
         </h2>
 
         <p>
+            {% blocktrans trimmed %}
             Explore esports tournaments and discover
             the competition beyond the teams.
+            {% endblocktrans %}
         </p>
 
         <a href="{% url 'tournaments' %}" class="btn btn-primary">
-            🏆 Discover Tournaments
+            🏆 {% trans "Discover Tournaments" %}
         </a>
 
     </div>

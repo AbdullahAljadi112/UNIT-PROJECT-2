@@ -1,15 +1,24 @@
 
 {% extends "esports/base.html" %}
+{% load i18n %}
 
-{% block title %}Players | Saudi Arena{% endblock %}
+{% block title %}{% trans "Players" %} | Saudi Arena{% endblock %}
 
 {% block content %}
 
 <section class="page-header">
     <div class="container">
-        <span class="section-label">SAUDI ESPORTS TALENT</span>
-        <h1>MEET THE PLAYERS</h1>
-        <p>Discover Saudi esports stars, their stories and achievements.</p>
+
+        <span class="section-label">
+            {% trans "SAUDI ESPORTS TALENT" %}
+        </span>
+
+        <h1>{% trans "MEET THE PLAYERS" %}</h1>
+
+        <p>
+            {% trans "Discover Saudi esports stars, their stories and achievements." %}
+        </p>
+
     </div>
 </section>
 
@@ -18,9 +27,17 @@
 
         <div class="section-header">
             <div>
-                <span class="section-label">PLAYER DIRECTORY</span>
-                <h2>Featured Players</h2>
-                <p>Click a player card to explore their career.</p>
+
+                <span class="section-label">
+                    {% trans "PLAYER DIRECTORY" %}
+                </span>
+
+                <h2>{% trans "Featured Players" %}</h2>
+
+                <p>
+                    {% trans "Click a player card to explore their career." %}
+                </p>
+
             </div>
         </div>
 
@@ -49,17 +66,22 @@
                 <div class="directory-team-content">
 
                     <span class="directory-team-label">
-                        {{ player.game }}
+                        {% trans player.game %}
                     </span>
 
-                    <h3>{{ player.name }}</h3>
+                    <h3>{% trans player.name %}</h3>
 
-                    <p>{{ player.real_name }}</p>
-                    <p>{{ player.team }}</p>
+                    <p>{% trans player.real_name %}</p>
+                    <p>{% trans player.team %}</p>
 
                     <div class="directory-team-footer">
-                        <span>VIEW PLAYER PROFILE</span>
+
+                        <span>
+                            {% trans "VIEW PLAYER PROFILE" %}
+                        </span>
+
                         <span class="directory-team-star">➜</span>
+
                     </div>
 
                 </div>
@@ -69,8 +91,13 @@
             {% empty %}
 
             <div class="teams-empty-state">
-                <h3>No Players Available</h3>
-                <p>Player profiles will be added soon.</p>
+
+                <h3>{% trans "No Players Available" %}</h3>
+
+                <p>
+                    {% trans "Player profiles will be added soon." %}
+                </p>
+
             </div>
 
             {% endfor %}

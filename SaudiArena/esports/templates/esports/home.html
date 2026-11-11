@@ -1,8 +1,8 @@
 
 {% extends 'esports/base.html' %}
-{% load static %}
+{% load static i18n %}
 
-{% block title %}Home | Saudi Arena{% endblock %}
+{% block title %}{% trans "Home" %} | Saudi Arena{% endblock %}
 
 {% block content %}
 
@@ -36,30 +36,32 @@
         <div class="hero-content">
 
             <span class="section-tag">
-                WELCOME TO SAUDI ARENA
+                {% trans "WELCOME TO SAUDI ARENA" %}
             </span>
 
             <h1 class="hero-title">
-                THE FUTURE OF
-                <span class="gradient-text">ESPORTS</span>
-                STARTS HERE.
+                {% trans "THE FUTURE OF" %}
+                <span class="gradient-text">{% trans "ESPORTS" %}</span>
+                {% trans "STARTS HERE." %}
             </h1>
 
             <p class="hero-description">
+                {% blocktrans trimmed %}
                 Discover the world of competitive gaming
                 in Saudi Arabia. Your gateway to teams,
                 players, games, tournaments, and achievements.
+                {% endblocktrans %}
             </p>
 
             <div class="btn-group">
 
                 <a href="#gateway" class="btn btn-primary">
-                    Explore Saudi Arena
+                    {% trans "Explore Saudi Arena" %}
                     <span aria-hidden="true">↓</span>
                 </a>
 
                 <a href="{% url 'about' %}" class="btn btn-outline">
-                    About Us
+                    {% trans "About Us" %}
                     <span aria-hidden="true">↗</span>
                 </a>
 
@@ -70,8 +72,10 @@
                 <span class="hero-line"></span>
 
                 <p>
+                    {% blocktrans trimmed %}
                     ONE KINGDOM.
                     ENDLESS POSSIBILITIES.
+                    {% endblocktrans %}
                 </p>
 
             </div>
@@ -91,14 +95,16 @@
         <div class="home-gateway-heading">
 
             <span class="sa-about-overline">
-                EXPLORE SAUDI ARENA
+                {% trans "EXPLORE SAUDI ARENA" %}
             </span>
 
-            <h2>YOUR GATEWAY TO ESPORTS.</h2>
+            <h2>{% trans "YOUR GATEWAY TO ESPORTS." %}</h2>
 
             <p>
+                {% blocktrans trimmed %}
                 Everything you need to discover
                 Saudi esports, all in one place.
+                {% endblocktrans %}
             </p>
 
         </div>
@@ -107,37 +113,37 @@
 
             <a href="{% url 'teams' %}">
                 <span>01</span>
-                <strong>TEAMS</strong>
+                <strong>{% trans "TEAMS" %}</strong>
                 <span aria-hidden="true">↗</span>
             </a>
 
             <a href="{% url 'players' %}">
                 <span>02</span>
-                <strong>PLAYERS</strong>
+                <strong>{% trans "PLAYERS" %}</strong>
                 <span aria-hidden="true">↗</span>
             </a>
 
             <a href="{% url 'games' %}">
                 <span>03</span>
-                <strong>GAMES</strong>
+                <strong>{% trans "GAMES" %}</strong>
                 <span aria-hidden="true">↗</span>
             </a>
 
             <a href="{% url 'tournaments' %}">
                 <span>04</span>
-                <strong>TOURNAMENTS</strong>
+                <strong>{% trans "TOURNAMENTS" %}</strong>
                 <span aria-hidden="true">↗</span>
             </a>
 
             <a href="{% url 'achievements' %}">
                 <span>05</span>
-                <strong>ACHIEVEMENTS</strong>
+                <strong>{% trans "ACHIEVEMENTS" %}</strong>
                 <span aria-hidden="true">↗</span>
             </a>
 
             <a href="{% url 'about' %}">
                 <span>06</span>
-                <strong>ABOUT US</strong>
+                <strong>{% trans "ABOUT US" %}</strong>
                 <span aria-hidden="true">↗</span>
             </a>
 
