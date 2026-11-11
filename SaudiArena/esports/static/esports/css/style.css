@@ -5056,3 +5056,114 @@ html[lang="ar"] .sa-about-ending h2 {
     object-fit: cover;
     object-position: center;
 }
+
+/* ALL TEAM LOGOS - SAME SIZE */
+
+.teams-pro-emblem {
+    position: absolute;
+    bottom: 20px;
+    left: 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 90px;
+    height: 90px;
+
+    padding: 0;
+    margin: 0;
+
+    border: 2px solid #a78bfa;
+    border-radius: 11px;
+    background: transparent;
+
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+
+.teams-pro-emblem img {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    padding: 0;
+    margin: 0;
+
+    object-fit: contain;
+    object-position: center;
+
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    box-shadow: none;
+    box-sizing: border-box;
+}
+
+/* SAUDI ARENA HEADER LOGO - COMPACT SIZE */
+
+.navbar .sa-brand-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.navbar .sa-logo-frame {
+    width: 58px;
+    height: 58px;
+    min-width: 58px;
+    min-height: 58px;
+    flex: 0 0 58px;
+    box-sizing: border-box;
+    border-radius: 16px;
+}
+
+.navbar .sa-logo-video {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 13px;
+}
+
+.navbar .sa-logo-video video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+}
+
+.navbar .sa-brand-name {
+    white-space: nowrap;
+}
+
+/* Player cards - fix image boundaries */
+.teams-directory-grid .directory-team-logo {
+    position: relative;
+    width: 100%;
+    height: 285px;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    border-radius: 22px 22px 0 0;
+    display: block;
+}
+
+.teams-directory-grid .directory-team-logo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
+    object-fit: cover;
+    object-position: center 25%;
+    border-radius: 0;
+    transform: none;
+}
+
+/* Keep the image within the card's rounded edges */
+.teams-directory-grid .directory-team-card {
+    overflow: hidden;
+    border-radius: 24px;
+}

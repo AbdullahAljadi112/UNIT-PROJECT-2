@@ -140,21 +140,36 @@
 
                 <div class="teams-pro-card-visual">
 
-                    {% if teams_page.card_image %}
+                    <!-- INDIVIDUAL TEAM COVER IMAGE -->
+                    {% if team.cover_url %}
+
+                    <img
+                        src="{{ team.cover_url }}"
+                        alt="{{ team.name }}"
+                        loading="lazy"
+                        class="teams-pro-card-background"
+                    >
+
+                    {% elif teams_page.card_image %}
+
                     <img
                         src="{{ teams_page.card_image }}"
                         alt=""
                         loading="lazy"
                         class="teams-pro-card-background"
                     >
+
                     {% endif %}
 
+                    <!-- IMAGE OVERLAY -->
                     <div class="teams-pro-card-shade"></div>
 
+                    <!-- ORGANIZATION BADGE -->
                     <span class="teams-pro-card-tag">
                         🇸🇦 {% trans "SAUDI ORGANIZATION" %}
                     </span>
 
+                    <!-- TEAM NUMBER -->
                     <span class="teams-pro-card-number">
                         {{ forloop.counter|stringformat:"02d" }}
                     </span>
@@ -183,7 +198,7 @@
                 </div>
 
 
-                <!-- TEAM INFO -->
+                <!-- TEAM INFORMATION -->
                 <div class="teams-pro-card-body">
 
                     <span class="teams-pro-card-category">
@@ -206,12 +221,15 @@
             {% empty %}
 
             <div class="teams-pro-empty">
+
                 <h3>{% trans "No teams found" %}</h3>
+
                 <p>{% trans "Try another team name." %}</p>
 
                 <a href="{% url 'teams' %}" class="btn btn-primary">
                     {% trans "Show All Teams" %}
                 </a>
+
             </div>
 
             {% endfor %}
