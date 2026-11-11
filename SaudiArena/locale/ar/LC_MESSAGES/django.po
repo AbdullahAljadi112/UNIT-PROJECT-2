@@ -998,3 +998,23 @@ msgstr "صنعت المملكة العربية السعودية التاريخ �
 
 msgid "Saudi Arabia reached the FIFAe World Cup 2025 Rocket League grand final and finished as world runner-up, adding another major international achievement to the nation's esports history."
 msgstr "وصلت المملكة العربية السعودية إلى نهائي كأس العالم لكرة القدم الإلكترونية 2025 في لعبة روكيت ليق، وأنهت البطولة في مركز الوصيف عالميًا، مضيفة إنجازًا دوليًا جديدًا إلى تاريخ الرياضات الإلكترونية السعودية."
+
+
+msgid "Emblem of Saudi Arabia"
+msgstr "شعار المملكة العربية السعودية"
+
+msgid "Saudi Vision 2030 logo"
+msgstr "شعار رؤية السعودية 2030"
+
+msgid "SAUDI VISION 2030"
+msgstr "رؤية السعودية 2030"
+
+msgid "FROM THE KINGDOM TO THE WORLD"
+msgstr "من المملكة إلى العالمية"
+
+msgid "Guided by Saudi Vision 2030, the Kingdom is strengthening its position in esports by empowering local talent, developing the gaming industry, and hosting world-class competitions."
+msgstr "في ظل رؤية السعودية 2030، تعزز المملكة مكانتها في الرياضات الإلكترونية عبر تمكين المواهب الوطنية، وتطوير صناعة الألعاب، واستضافة المنافسات العالمية."
+
+msgid "Saudi esports highlights"
+msgstr "لقطات من الرياضات الإلكترونية السعودية"
+

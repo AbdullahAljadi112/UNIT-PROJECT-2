@@ -54,16 +54,32 @@
 
                 <form method="get" class="th-filters">
 
-                    <input
-                        type="search"
-                        name="search"
-                        placeholder="{% trans 'Search tournaments or games...' %}"
-                        value="{{ search_query|default:'' }}"
-                        aria-label="{% trans 'Search tournaments' %}"
+                    <!-- GAME FILTER -->
+                    <select
+                        name="game"
+                        class="th-filter-select"
+                        aria-label="{% trans 'Filter tournaments by game' %}"
                     >
+                        <option value="">
+                            {% trans "All Games" %}
+                        </option>
 
+                        {% for game in available_games %}
+                        <option
+                            value="{{ game }}"
+                            {% if selected_game == game %}selected{% endif %}
+                        >
+                            {% trans game %}
+                        </option>
+                        {% endfor %}
+
+                    </select>
+
+
+                    <!-- STATUS FILTER -->
                     <select
                         name="status"
+                        class="th-filter-select"
                         aria-label="{% trans 'Filter tournaments by status' %}"
                     >
                         <option value="">
@@ -86,8 +102,9 @@
                         </option>
                     </select>
 
+
                     <button type="submit" class="th-search-btn">
-                        {% trans "Search" %}
+                        {% trans "Filter Tournaments" %}
                     </button>
 
                     <a href="{% url 'tournaments' %}" class="th-reset-btn">
@@ -99,7 +116,7 @@
             </div>
 
 
-            <!-- EQUAL TOURNAMENT GRID -->
+            <!-- TOURNAMENT GRID -->
             <div class="th-grid">
 
                 {% for tournament in tournaments %}

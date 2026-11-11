@@ -1,22 +1,29 @@
 
 import json
-from django.shortcuts import redirect
-from django.views.decorators.http import require_POST
-from django.utils.http import url_has_allowed_host_and_scheme
-from django.conf import settings
-from django.shortcuts import render
 
+from django.conf import settings
+from django.http import Http404
+from django.shortcuts import redirect, render
+from django.utils.http import url_has_allowed_host_and_scheme
+from django.views.decorators.http import require_POST
+
+
+# ==========================================
+# LOAD DATA FROM JSON
+# ==========================================
 
 def load_data():
-
     file_path = settings.BASE_DIR / "esports" / "data" / "content.json"
 
     with open(file_path, "r", encoding="utf-8") as file:
         return json.load(file)
 
 
-def home(request):
+# ==========================================
+# HOME PAGE
+# ==========================================
 
+def home(request):
     data = load_data()
 
     context = {
@@ -30,36 +37,48 @@ def home(request):
     return render(request, "esports/home.html", context)
 
 
-def tournaments(request):
+# ==========================================
+# TOURNAMENTS PAGE - DROPDOWN FILTERS
+# ==========================================
 
+def tournaments(request):
     data = load_data()
 
     all_tournaments = data.get("featured_tournaments", [])
 
-    search_query = request.GET.get("search", "").strip()
+    # Get available games from JSON
+    available_games = sorted({
+        tournament.get("game", {}).get("name", "")
+        for tournament in all_tournaments
+        if tournament.get("game", {}).get("name")
+    })
+
+    # Get selected filters
+    selected_game = request.GET.get("game", "").strip()
     selected_status = request.GET.get("status", "").strip()
 
     filtered_tournaments = all_tournaments
 
-    if search_query:
+    # Filter tournaments by game
+    if selected_game:
         filtered_tournaments = [
             tournament
             for tournament in filtered_tournaments
-            if search_query.lower() in tournament["name"].lower()
-            or search_query.lower() in tournament["description"].lower()
-            or search_query.lower() in tournament["game"]["name"].lower()
+            if tournament.get("game", {}).get("name") == selected_game
         ]
 
+    # Filter tournaments by status
     if selected_status:
         filtered_tournaments = [
             tournament
             for tournament in filtered_tournaments
-            if tournament["status"] == selected_status
+            if tournament.get("status") == selected_status
         ]
 
     context = {
         "tournaments": filtered_tournaments,
-        "search_query": search_query,
+        "available_games": available_games,
+        "selected_game": selected_game,
         "selected_status": selected_status,
     }
 
@@ -69,9 +88,13 @@ def tournaments(request):
         context
     )
 
+
+# ==========================================
+# DARK / LIGHT MODE
+# ==========================================
+
 @require_POST
 def toggle_theme(request):
-
     current_theme = request.COOKIES.get("saudiArenaTheme", "dark")
 
     new_theme = "light" if current_theme == "dark" else "dark"
@@ -100,21 +123,25 @@ def toggle_theme(request):
     return response
 
 
+# ==========================================
+# TEAMS PAGE - DROPDOWN FILTER
+# ==========================================
 
 def teams(request):
     data = load_data()
 
     all_teams = data.get("featured_teams", [])
-    search_query = request.GET.get("search", "").strip()
 
-    filtered_teams = all_teams
+    search_query = request.GET.get("search", "").strip()
 
     if search_query:
         filtered_teams = [
-            team for team in all_teams
-            if search_query.lower() in team["name"].lower()
-            or search_query.lower() in team["description"].lower()
+            team
+            for team in all_teams
+            if team.get("name", "").casefold() == search_query.casefold()
         ]
+    else:
+        filtered_teams = all_teams
 
     context = {
         "teams": filtered_teams,
@@ -123,11 +150,18 @@ def teams(request):
         "teams_page": data.get("teams_page", {}),
     }
 
-    return render(request, "esports/teams.html", context)
+    return render(
+        request,
+        "esports/teams.html",
+        context
+    )
 
+
+# ==========================================
+# ABOUT PAGE
+# ==========================================
 
 def about(request):
-
     data = load_data()
 
     context = {
@@ -140,6 +174,11 @@ def about(request):
         context
     )
 
+
+# ==========================================
+# PLAYERS PAGE
+# ==========================================
+
 def players(request):
     data = load_data()
 
@@ -147,8 +186,16 @@ def players(request):
         "players": data.get("featured_players", [])
     }
 
-    return render(request, "esports/players.html", context)
+    return render(
+        request,
+        "esports/players.html",
+        context
+    )
 
+
+# ==========================================
+# GAMES PAGE
+# ==========================================
 
 def games(request):
     data = load_data()
@@ -157,9 +204,16 @@ def games(request):
         "games": data.get("featured_games", [])
     }
 
-    return render(request, "esports/games.html", context)
+    return render(
+        request,
+        "esports/games.html",
+        context
+    )
 
 
+# ==========================================
+# ACHIEVEMENTS PAGE
+# ==========================================
 
 def achievements(request):
     data = load_data()
@@ -200,11 +254,16 @@ def achievements(request):
         "total_years": len(years),
     }
 
-    return render(request, "esports/achievements.html", context)
+    return render(
+        request,
+        "esports/achievements.html",
+        context
+    )
 
 
-from django.http import Http404
-
+# ==========================================
+# PLAYER DETAIL PAGE
+# ==========================================
 
 def player_detail(request, slug):
     data = load_data()
@@ -213,7 +272,8 @@ def player_detail(request, slug):
 
     player = next(
         (
-            item for item in players
+            item
+            for item in players
             if item.get("slug") == slug
         ),
         None
@@ -231,5 +291,3 @@ def player_detail(request, slug):
         "esports/player_detail.html",
         context
     )
-
-

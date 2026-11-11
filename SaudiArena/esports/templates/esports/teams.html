@@ -109,19 +109,53 @@
         </div>
 
 
-        <!-- SEARCH -->
+        <!-- TEAM FILTER -->
         <form method="get" class="teams-pro-search">
 
-            <input
-                type="search"
+            <select
                 name="search"
-                placeholder="{% trans 'Search for a team...' %}"
-                value="{{ search_query|default:'' }}"
-                aria-label="{% trans 'Search teams' %}"
+                class="teams-filter-select"
+                aria-label="{% trans 'Select a team' %}"
             >
 
+                <option value="">
+                    {% trans "All Teams" %}
+                </option>
+
+                <option value="Team Falcons"
+                    {% if search_query == "Team Falcons" %}selected{% endif %}>
+                    {% trans "Team Falcons" %}
+                </option>
+
+                <option value="POWR"
+                    {% if search_query == "POWR" %}selected{% endif %}>
+                    {% trans "POWR" %}
+                </option>
+
+                <option value="Twisted Minds"
+                    {% if search_query == "Twisted Minds" %}selected{% endif %}>
+                    {% trans "Twisted Minds" %}
+                </option>
+
+                <option value="R8 Esports"
+                    {% if search_query == "R8 Esports" %}selected{% endif %}>
+                    {% trans "R8 Esports" %}
+                </option>
+
+                <option value="ROC Esports"
+                    {% if search_query == "ROC Esports" %}selected{% endif %}>
+                    {% trans "ROC Esports" %}
+                </option>
+
+                <option value="Team RA'AD"
+                    {% if search_query == "Team RA'AD" %}selected{% endif %}>
+                    {% trans "Team RA'AD" %}
+                </option>
+
+            </select>
+
             <button type="submit" class="btn btn-primary">
-                🔎 {% trans "Search Teams" %}
+                🔎 {% trans "Filter Teams" %}
             </button>
 
             <a href="{% url 'teams' %}" class="btn btn-secondary">

@@ -5167,3 +5167,406 @@ html[lang="ar"] .sa-about-ending h2 {
     overflow: hidden;
     border-radius: 24px;
 }
+
+/* Teams filter dropdown - dark mode */
+.teams-filter-select {
+    flex: 1;
+    min-width: 0;
+    padding: 14px 18px;
+    border: 1px solid #8b5cf6;
+    border-radius: 12px;
+    background-color: #1b1530;
+    color: #ffffff;
+    font: inherit;
+    cursor: pointer;
+    color-scheme: dark;
+}
+
+.teams-filter-select option {
+    background-color: #1b1530;
+    color: #ffffff;
+}
+
+/* Teams filter dropdown - light mode */
+body[data-theme="light"] .teams-filter-select,
+html[data-theme="light"] .teams-filter-select,
+body.light-mode .teams-filter-select,
+html.light-mode .teams-filter-select {
+    background-color: #ffffff;
+    color: #1f2937;
+    border-color: #8b5cf6;
+    color-scheme: light;
+}
+
+body[data-theme="light"] .teams-filter-select option,
+html[data-theme="light"] .teams-filter-select option,
+body.light-mode .teams-filter-select option,
+html.light-mode .teams-filter-select option {
+    background-color: #ffffff;
+    color: #1f2937;
+}
+
+.teams-filter-select:focus {
+    outline: 2px solid #8b5cf6;
+    outline-offset: 2px;
+}
+
+/* =========================================
+   SAUDI ARENA - VISION 2030 SECTION
+   HOME PAGE ONLY
+========================================= */
+
+.sa-vision {
+    --vision-green: #16a66a;
+    --vision-text: #f8f7ff;
+    --vision-muted: #b9b6ca;
+    --vision-panel: #141324;
+    --vision-border: rgba(139, 92, 246, 0.22);
+
+    position: relative;
+    padding: 65px 0;
+    background: var(--bg-primary);
+    overflow: hidden;
+}
+
+.sa-vision-panel {
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr);
+    align-items: center;
+    gap: clamp(24px, 4vw, 55px);
+
+    padding: clamp(25px, 4vw, 52px);
+    border: 1px solid var(--vision-border);
+    border-radius: 24px;
+
+    background:
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(22, 166, 106, 0.09),
+            transparent 45%
+        ),
+        radial-gradient(
+            circle at 90% 90%,
+            rgba(139, 92, 246, 0.13),
+            transparent 50%
+        ),
+        var(--vision-panel);
+
+    box-shadow: 0 20px 55px rgba(0, 0, 0, 0.12);
+}
+
+.sa-vision-panel::before {
+    content: "";
+    position: absolute;
+    inset-inline-start: 0;
+    top: 12%;
+    bottom: 12%;
+    width: 3px;
+    border-radius: 8px;
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        var(--vision-green),
+        #8b5cf6,
+        transparent
+    );
+}
+
+/* CONTENT */
+
+.sa-vision-content {
+    min-width: 0;
+}
+
+.sa-vision-logos {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 27px;
+}
+
+.sa-vision-emblem {
+    width: 62px;
+    height: 78px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.sa-vision-logo {
+    width: 135px;
+    max-height: 78px;
+    object-fit: contain;
+}
+
+.sa-vision-logo-divider {
+    display: block;
+    width: 1px;
+    height: 45px;
+    background: var(--vision-border);
+}
+
+.sa-vision-eyebrow {
+    display: inline-block;
+    margin-bottom: 12px;
+
+    color: #44d99a;
+    font-family: "Rajdhani", sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.sa-vision-content h2 {
+    max-width: 550px;
+    margin-bottom: 17px;
+
+    color: var(--vision-text);
+    font-size: clamp(30px, 3.6vw, 49px);
+    font-weight: 900;
+    line-height: 1.15;
+}
+
+.sa-vision-description {
+    max-width: 560px;
+
+    color: var(--vision-muted);
+    font-size: 15px;
+    line-height: 2;
+}
+
+.sa-vision-signature {
+    display: flex;
+    gap: 6px;
+    margin-top: 25px;
+}
+
+.sa-vision-signature span {
+    display: block;
+    height: 3px;
+    border-radius: 10px;
+}
+
+.sa-vision-signature span:nth-child(1) {
+    width: 40px;
+    background: var(--vision-green);
+}
+
+.sa-vision-signature span:nth-child(2) {
+    width: 20px;
+    background: #8b5cf6;
+}
+
+.sa-vision-signature span:nth-child(3) {
+    width: 9px;
+    background: #8b5cf6;
+    opacity: 0.45;
+}
+
+/* VIDEO */
+
+.sa-vision-media {
+    min-width: 0;
+}
+
+.sa-vision-video-frame {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+
+    border: 1px solid rgba(139, 92, 246, 0.38);
+    border-radius: 18px;
+    background: #090b14;
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.3),
+        0 0 30px rgba(139, 92, 246, 0.09);
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.sa-vision-video-frame:hover {
+    transform: translateY(-5px);
+    border-color: var(--vision-green);
+    box-shadow:
+        0 22px 55px rgba(0, 0, 0, 0.32),
+        0 0 35px rgba(22, 166, 106, 0.16);
+}
+
+.sa-vision-video-frame video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sa-vision-video-shade {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+
+    background: linear-gradient(
+        to top,
+        rgba(5, 8, 15, 0.68),
+        transparent 45%
+    );
+}
+
+.sa-vision-video-caption {
+    position: absolute;
+    bottom: 18px;
+    inset-inline-start: 20px;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    color: #ffffff;
+    font-family: "Rajdhani", sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.sa-vision-live-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #44d99a;
+    box-shadow: 0 0 12px rgba(68, 217, 154, 0.7);
+    animation: saVisionPulse 2s ease-in-out infinite;
+}
+
+@keyframes saVisionPulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.55;
+        transform: scale(0.85);
+    }
+}
+
+/* LIGHT MODE */
+
+[data-theme="light"] .sa-vision {
+    --vision-text: #201b38;
+    --vision-muted: #615c72;
+    --vision-panel: #ffffff;
+    --vision-border: rgba(109, 40, 217, 0.15);
+}
+
+[data-theme="light"] .sa-vision-eyebrow {
+    color: #087a4b;
+}
+
+[data-theme="light"] .sa-vision-panel {
+    box-shadow: 0 15px 40px rgba(35, 25, 60, 0.06);
+}
+
+/* ARABIC TYPOGRAPHY */
+
+[dir="rtl"] .sa-vision-content h2 {
+    font-family: "Cairo", sans-serif;
+    font-size: clamp(27px, 3vw, 40px);
+    line-height: 1.5;
+}
+
+[dir="rtl"] .sa-vision-description {
+    font-family: "Cairo", sans-serif;
+    line-height: 2.1;
+}
+
+/* TABLETS */
+
+@media (max-width: 900px) {
+    .sa-vision {
+        padding: 45px 0;
+    }
+
+    .sa-vision-panel {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .sa-vision-video-frame {
+        max-width: 700px;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+    .sa-vision {
+        padding: 30px 0;
+    }
+
+    .sa-vision-panel {
+        padding: 24px 18px;
+        gap: 25px;
+        border-radius: 17px;
+    }
+
+    .sa-vision-logos {
+        gap: 14px;
+        margin-bottom: 20px;
+    }
+
+    .sa-vision-emblem {
+        width: 48px;
+        height: 62px;
+    }
+
+    .sa-vision-logo {
+        width: 110px;
+        max-height: 62px;
+    }
+
+    .sa-vision-logo-divider {
+        height: 35px;
+    }
+
+    .sa-vision-content h2 {
+        font-size: 30px;
+    }
+
+    [dir="rtl"] .sa-vision-content h2 {
+        font-size: 27px;
+    }
+
+    .sa-vision-description {
+        font-size: 13px;
+    }
+
+    .sa-vision-video-frame {
+        border-radius: 12px;
+    }
+
+    .sa-vision-video-caption {
+        bottom: 12px;
+        inset-inline-start: 13px;
+        font-size: 10px;
+    }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+    .sa-vision-live-dot {
+        animation: none;
+    }
+
+    .sa-vision-video-frame {
+        transition: none;
+    }
+
+    .sa-vision-video-frame:hover {
+        transform: none;
+    }
+}
