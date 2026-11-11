@@ -1,8 +1,8 @@
 
 {% extends "esports/base.html" %}
-{% load static %}
+{% load static i18n %}
 
-{% block title %}Hall of Fame | Saudi Arena{% endblock %}
+{% block title %}{% trans "Hall of Fame" %} | Saudi Arena{% endblock %}
 
 {% block content %}
 
@@ -11,22 +11,24 @@
     <div class="container">
         <div class="ach-hero-content">
             <span class="ach-eyebrow">
-                🏆 SAUDI ESPORTS HALL OF FAME
+                🏆 {% trans "SAUDI ESPORTS HALL OF FAME" %}
             </span>
 
             <h1>
-                THE LEGACY OF
-                <span class="gradient-text">CHAMPIONS</span>
+                {% trans "THE LEGACY OF" %}
+                <span class="gradient-text">{% trans "CHAMPIONS" %}</span>
             </h1>
 
             <p>
+                {% blocktrans trimmed %}
                 Every trophy tells a story. Discover the victories,
                 legendary teams, and unforgettable moments
                 shaping Saudi Arabia's esports legacy.
+                {% endblocktrans %}
             </p>
 
             <a href="#legendary-victories" class="btn btn-primary">
-                🏆 Explore Achievements
+                🏆 {% trans "Explore Achievements" %}
             </a>
         </div>
     </div>
@@ -38,15 +40,17 @@
     <div class="container">
 
         <div class="ach-section-heading">
-            <span class="section-label">📊 THE NUMBERS</span>
+            <span class="section-label">
+                📊 {% trans "THE NUMBERS" %}
+            </span>
 
             <h2>
-                Saudi Esports
-                <span class="gradient-text">In Numbers</span>
+                {% trans "Saudi Esports" %}
+                <span class="gradient-text">{% trans "In Numbers" %}</span>
             </h2>
 
             <p>
-                A snapshot of the achievements featured on Saudi Arena.
+                {% trans "A snapshot of the achievements featured on Saudi Arena." %}
             </p>
         </div>
 
@@ -55,25 +59,25 @@
             <div class="ach-stat-card">
                 <span class="ach-stat-icon">🏆</span>
                 <strong>{{ total_achievements }}</strong>
-                <span>Achievements</span>
+                <span>{% trans "Achievements" %}</span>
             </div>
 
             <div class="ach-stat-card">
                 <span class="ach-stat-icon">👑</span>
                 <strong>{{ total_teams }}</strong>
-                <span>Teams & Champions</span>
+                <span>{% trans "Teams & Champions" %}</span>
             </div>
 
             <div class="ach-stat-card">
                 <span class="ach-stat-icon">🎮</span>
                 <strong>{{ total_games }}</strong>
-                <span>Competitive Games</span>
+                <span>{% trans "Competitive Games" %}</span>
             </div>
 
             <div class="ach-stat-card">
                 <span class="ach-stat-icon">📅</span>
                 <strong>{{ total_years }}</strong>
-                <span>Featured Years</span>
+                <span>{% trans "Featured Years" %}</span>
             </div>
 
         </div>
@@ -90,17 +94,19 @@
 
         <div class="ach-section-heading">
             <span class="section-label">
-                👑 HALL OF CHAMPIONS
+                👑 {% trans "HALL OF CHAMPIONS" %}
             </span>
 
             <h2>
-                Legendary
-                <span class="gradient-text">Victories</span>
+                {% trans "Legendary" %}
+                <span class="gradient-text">{% trans "Victories" %}</span>
             </h2>
 
             <p>
+                {% blocktrans trimmed %}
                 Celebrating unforgettable achievements
                 in Saudi competitive gaming.
+                {% endblocktrans %}
             </p>
         </div>
 
@@ -128,11 +134,11 @@
                     <!-- CHAMPION / RUNNER-UP BADGE -->
                     {% if "Runner-Up" in achievement.title or "Runner-up" in achievement.title %}
                         <span class="ach-image-badge ach-status-silver">
-                            🥈 RUNNER-UP
+                            🥈 {% trans "RUNNER-UP" %}
                         </span>
                     {% else %}
                         <span class="ach-image-badge ach-status-gold">
-                            🏆 CHAMPION
+                            🏆 {% trans "CHAMPION" %}
                         </span>
                     {% endif %}
 
@@ -151,25 +157,25 @@
 
                     {% if achievement.game %}
                         <span class="ach-game-label">
-                            🎮 {{ achievement.game }}
+                            🎮 {% trans achievement.game %}
                         </span>
                     {% endif %}
 
-                    <h3>{{ achievement.title }}</h3>
+                    <h3>{% trans achievement.title %}</h3>
 
                     {% if achievement.team %}
                         <p class="ach-team">
-                            👑 {{ achievement.team }}
+                            👑 {% trans achievement.team %}
                         </p>
                     {% endif %}
 
                     <p class="ach-description">
-                        {{ achievement.description }}
+                        {% trans achievement.description %}
                     </p>
 
                     <!-- CARD FOOTER -->
                     <div class="ach-card-footer">
-                        <span>⭐ SAUDI ARENA</span>
+                        <span>⭐ {% trans "SAUDI ARENA" %}</span>
 
                         {% if "Runner-Up" in achievement.title or "Runner-up" in achievement.title %}
                             <span>🥈</span>
@@ -186,9 +192,9 @@
 
             <div class="ach-empty">
                 <span>🏆</span>
-                <h3>Legendary Moments Coming Soon</h3>
+                <h3>{% trans "Legendary Moments Coming Soon" %}</h3>
                 <p>
-                    Our hall of champions is being prepared.
+                    {% trans "Our hall of champions is being prepared." %}
                 </p>
             </div>
 
@@ -207,17 +213,19 @@
 
         <div class="ach-section-heading">
             <span class="section-label">
-                ✨ THE JOURNEY
+                ✨ {% trans "THE JOURNEY" %}
             </span>
 
             <h2>
-                Road to
-                <span class="gradient-text">Glory</span>
+                {% trans "Road to" %}
+                <span class="gradient-text">{% trans "Glory" %}</span>
             </h2>
 
             <p>
+                {% blocktrans trimmed %}
                 Explore the milestones that define
                 Saudi esports history.
+                {% endblocktrans %}
             </p>
         </div>
 
@@ -240,16 +248,20 @@
                 <div class="ach-timeline-content">
 
                     <span class="ach-timeline-year">
-                        {{ achievement.year|default:"Milestone" }}
+                        {% if achievement.year %}
+                            {{ achievement.year }}
+                        {% else %}
+                            {% trans "Milestone" %}
+                        {% endif %}
                     </span>
 
-                    <h3>{{ achievement.title }}</h3>
+                    <h3>{% trans achievement.title %}</h3>
 
-                    <p>{{ achievement.description }}</p>
+                    <p>{% trans achievement.description %}</p>
 
                     {% if achievement.team %}
                         <span class="ach-timeline-team">
-                            🇸🇦 {{ achievement.team }}
+                            🇸🇦 {% trans achievement.team %}
                         </span>
                     {% endif %}
 
@@ -276,22 +288,24 @@
             </span>
 
             <span class="section-label">
-                THE NEXT GENERATION
+                {% trans "THE NEXT GENERATION" %}
             </span>
 
             <h2>
-                MEET THE
-                <span class="gradient-text">CHAMPIONS</span>
+                {% trans "MEET THE" %}
+                <span class="gradient-text">{% trans "CHAMPIONS" %}</span>
             </h2>
 
             <p>
+                {% blocktrans trimmed %}
                 Behind every victory is a player with dedication,
                 talent, and a dream. Discover the stars
                 of Saudi esports.
+                {% endblocktrans %}
             </p>
 
             <a href="{% url 'players' %}" class="btn btn-primary">
-                🎮 Explore Players
+                🎮 {% trans "Explore Players" %}
             </a>
 
         </div>

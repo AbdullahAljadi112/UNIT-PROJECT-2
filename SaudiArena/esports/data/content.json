@@ -166,27 +166,27 @@
         {
             "name": "POWR",
             "description": "POWR is a Saudi gaming and entertainment organization known for its popular content creators, gaming personalities, and strong presence in the Saudi gaming community.",
-            "logo_url": "/static/esports/images/powr.jpg.png"
+            "logo_url": "/static/esports/images/poowr.png"
         },
         {
             "name": "Twisted Minds",
             "description": "Twisted Minds is a Saudi esports organization competing across multiple games and international tournaments, representing the Kingdom on the global stage.",
-            "logo_url": "/static/esports/images/twisted-minds.png.png"
+            "logo_url": "/static/esports/images/twisted-minds.pn.jpg"
         },
         {
             "name": "R8 Esports",
             "description": "R8 Esports is a Saudi competitive gaming organization with a presence in esports tournaments and the growing regional gaming scene.",
-            "logo_url": "/static/esports/images/r8-esports.jpg.png"
+            "logo_url": "/static/esports/images/r8-esports.png"
         },
         {
             "name": "ROC Esports",
             "description": "ROC Esports is a Saudi esports organization participating in competitive gaming and contributing to the development of the local esports community.",
-            "logo_url": "/static/esports/images/roc-esports.png.png"
+            "logo_url": "/static/esports/images/roc-esports.png"
         },
         {
             "name": "Team RA'AD",
             "description": "Team RA'AD is a Saudi esports organization associated with competitive gaming and the Kingdom's expanding esports ecosystem.",
-            "logo_url": "/static/esports/images/team-raad.png.png"
+            "logo_url": "/static/esports/images/team-raad.png"
         }
 
     ],

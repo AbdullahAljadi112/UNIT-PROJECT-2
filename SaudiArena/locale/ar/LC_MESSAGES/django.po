@@ -700,3 +700,301 @@ msgstr "مساعد الدوسري، المعروف باسم Msdossary، هو ل�
 
 msgid "Saud Al-tai, known as Exnid, is a Saudi professional Call of Duty player. He has competed in the Call of Duty League and represented Falcons teams in professional competition."
 msgstr "سعود الطائي، المعروف باسم إكسنيد، لاعب سعودي محترف في كول أوف ديوتي. شارك في دوري كول أوف ديوتي، ومثّل فرق فالكونز في المنافسات الاحترافية."
+
+# ==========================================
+# GAMES PAGE - STATIC CONTENT
+# ==========================================
+
+msgid "SAUDI ARENA GAME LIBRARY"
+msgstr "مكتبة ألعاب سعودي أرينا"
+
+msgid "THE WORLD OF"
+msgstr "عالم"
+
+msgid "Discover the competitive games that define esports in Saudi Arabia. From tactical shooters to football and high-speed battles."
+msgstr "اكتشف الألعاب التنافسية التي تميّز عالم الرياضات الإلكترونية في المملكة العربية السعودية، من ألعاب التصويب التكتيكية إلى كرة القدم والمعارك السريعة."
+
+msgid "Discover Games"
+msgstr "اكتشف الألعاب"
+
+msgid "GAME COLLECTION"
+msgstr "مجموعة الألعاب"
+
+msgid "Explore Our"
+msgstr "استكشف"
+
+msgid "Six competitive titles. Different worlds. One passion for esports."
+msgstr "ست ألعاب تنافسية. عوالم مختلفة. وشغف واحد بالرياضات الإلكترونية."
+
+msgid "SAUDI ARENA"
+msgstr "سعودي أرينا"
+
+msgid "Games Coming Soon"
+msgstr "ألعاب قادمة قريبًا"
+
+msgid "Our game library is being prepared."
+msgstr "نعمل حاليًا على تجهيز مكتبة الألعاب."
+
+msgid "JUST A GAME"
+msgstr "مجرد لعبة"
+
+msgid "Every game has its champions, legendary moments, and unforgettable competitions. Discover the passion behind Saudi esports."
+msgstr "لكل لعبة أبطالها ولحظاتها الأسطورية ومنافساتها التي لا تُنسى. اكتشف الشغف الذي يقف وراء الرياضات الإلكترونية السعودية."
+
+
+# ==========================================
+# GAMES - NAMES
+# ==========================================
+
+msgid "PUBG"
+msgstr "ببجي"
+
+msgid "EA SPORTS FC 27"
+msgstr "فيفا 27"
+
+
+# ==========================================
+# GAMES - GENRES
+# ==========================================
+
+msgid "Sports"
+msgstr "رياضة"
+
+msgid "Tactical Shooter"
+msgstr "تصويب تكتيكي"
+
+msgid "Battle Royale"
+msgstr "باتل رويال"
+
+msgid "First-Person Shooter"
+msgstr "تصويب من منظور الشخص الأول"
+
+msgid "Hero Shooter"
+msgstr "تصويب بالأبطال"
+
+msgid "Football Simulation"
+msgstr "محاكاة كرة القدم"
+
+
+# ==========================================
+# GAME 1 - ROCKET LEAGUE
+# ==========================================
+
+msgid "A competitive game that combines football with rocket-powered cars."
+msgstr "لعبة تنافسية تجمع بين كرة القدم والسيارات المزودة بمحركات صاروخية."
+
+
+# ==========================================
+# GAME 2 - VALORANT
+# ==========================================
+
+msgid "A team-based tactical shooter focused on strategy and teamwork."
+msgstr "لعبة تصويب تكتيكية تعتمد على الفرق وتركّز على التخطيط الاستراتيجي والعمل الجماعي."
+
+
+# ==========================================
+# GAME 3 - PUBG
+# ==========================================
+
+msgid "A competitive battle royale game where players fight to be the last team standing."
+msgstr "لعبة باتل رويال تنافسية يتقاتل فيها اللاعبون من أجل أن يكون فريقهم آخر فريق صامد."
+
+
+# ==========================================
+# GAME 4 - CALL OF DUTY
+# ==========================================
+
+msgid "A fast-paced competitive shooter featuring intense multiplayer battles, tactical teamwork, and high-level esports competition."
+msgstr "لعبة تصويب تنافسية سريعة الإيقاع، تتميز بمعارك جماعية حماسية وتعاون تكتيكي بين اللاعبين ومنافسات احترافية عالية المستوى."
+
+
+# ==========================================
+# GAME 5 - OVERWATCH
+# ==========================================
+
+msgid "A team-based competitive shooter where unique heroes, special abilities, and strategic coordination determine victory."
+msgstr "لعبة تصويب تنافسية جماعية، يعتمد الفوز فيها على الأبطال المميزين والقدرات الخاصة والتنسيق الاستراتيجي بين أعضاء الفريق."
+
+
+# ==========================================
+# GAME 6 - EA SPORTS FC 27
+# ==========================================
+
+msgid "A competitive football experience bringing world-class clubs, tactical gameplay, and professional esports tournaments together."
+msgstr "تجربة كرة قدم تنافسية تجمع بين الأندية العالمية وأسلوب اللعب التكتيكي وبطولات الرياضات الإلكترونية الاحترافية."
+
+# ==========================================
+# ACHIEVEMENTS PAGE - STATIC CONTENT
+# ==========================================
+
+msgid "Hall of Fame"
+msgstr "قاعة المشاهير"
+
+msgid "SAUDI ESPORTS HALL OF FAME"
+msgstr "قاعة مشاهير الرياضات الإلكترونية السعودية"
+
+msgid "THE LEGACY OF"
+msgstr "إرث"
+
+msgid "CHAMPIONS"
+msgstr "الأبطال"
+
+msgid "Every trophy tells a story. Discover the victories, legendary teams, and unforgettable moments shaping Saudi Arabia's esports legacy."
+msgstr "وراء كل كأس قصة. اكتشف الانتصارات والفرق الأسطورية واللحظات التي لا تُنسى، والتي صنعت إرث المملكة العربية السعودية في الرياضات الإلكترونية."
+
+msgid "Explore Achievements"
+msgstr "استكشف الإنجازات"
+
+msgid "THE NUMBERS"
+msgstr "الأرقام والإحصائيات"
+
+msgid "Saudi Esports"
+msgstr "الرياضات الإلكترونية السعودية"
+
+msgid "In Numbers"
+msgstr "بلغة الأرقام"
+
+msgid "A snapshot of the achievements featured on Saudi Arena."
+msgstr "نظرة سريعة على الإنجازات المعروضة في سعودي أرينا."
+
+msgid "Teams & Champions"
+msgstr "الفرق والأبطال"
+
+msgid "Competitive Games"
+msgstr "الألعاب التنافسية"
+
+msgid "Featured Years"
+msgstr "السنوات المميزة"
+
+msgid "HALL OF CHAMPIONS"
+msgstr "قاعة الأبطال"
+
+msgid "Legendary"
+msgstr "انتصارات"
+
+msgid "Victories"
+msgstr "أسطورية"
+
+msgid "Celebrating unforgettable achievements in Saudi competitive gaming."
+msgstr "نحتفي بالإنجازات التي لا تُنسى في عالم الألعاب التنافسية السعودية."
+
+msgid "RUNNER-UP"
+msgstr "الوصيف"
+
+msgid "CHAMPION"
+msgstr "البطل"
+
+msgid "Legendary Moments Coming Soon"
+msgstr "لحظات أسطورية قادمة قريبًا"
+
+msgid "Our hall of champions is being prepared."
+msgstr "نعمل حاليًا على تجهيز قاعة الأبطال."
+
+msgid "Road to"
+msgstr "الطريق إلى"
+
+msgid "Glory"
+msgstr "المجد"
+
+msgid "Explore the milestones that define Saudi esports history."
+msgstr "استكشف المحطات التاريخية التي صنعت تاريخ الرياضات الإلكترونية السعودية."
+
+msgid "Milestone"
+msgstr "محطة تاريخية"
+
+msgid "THE NEXT GENERATION"
+msgstr "الجيل القادم"
+
+msgid "MEET THE"
+msgstr "تعرّف على"
+
+msgid "Behind every victory is a player with dedication, talent, and a dream. Discover the stars of Saudi esports."
+msgstr "خلف كل انتصار لاعب يمتلك الإصرار والموهبة والحلم. اكتشف نجوم الرياضات الإلكترونية السعودية."
+
+msgid "Explore Players"
+msgstr "استكشف اللاعبين"
+
+
+# ==========================================
+# ACHIEVEMENTS - TITLES
+# ==========================================
+
+msgid "Esports World Cup Club Champion 2024"
+msgstr "بطل الأندية في كأس العالم للرياضات الإلكترونية 2024"
+
+msgid "Esports World Cup Club Champion 2025"
+msgstr "بطل الأندية في كأس العالم للرياضات الإلكترونية 2025"
+
+msgid "FIFAe World Cup 2024 Champions"
+msgstr "أبطال كأس العالم لكرة القدم الإلكترونية 2024"
+
+msgid "RLCS Raleigh Major 2025 Champions"
+msgstr "أبطال بطولة روكيت ليق الكبرى في رالي 2025"
+
+msgid "Overwatch World Cup 2023 Champions"
+msgstr "أبطال كأس العالم لأوفرواتش 2023"
+
+msgid "FIFAe World Cup 2025 Runner-Up"
+msgstr "وصيف كأس العالم لكرة القدم الإلكترونية 2025"
+
+
+# ==========================================
+# ACHIEVEMENTS - TEAMS AND GAMES
+# ==========================================
+
+msgid "Saudi Arabia National Team"
+msgstr "المنتخب السعودي"
+
+msgid "Multi-Game Esports"
+msgstr "رياضات إلكترونية متعددة الألعاب"
+
+msgid "Overwatch 2"
+msgstr "أوفرواتش 2"
+
+
+# ==========================================
+# ACHIEVEMENT 1 - EWC 2024
+# ==========================================
+
+msgid "Team Falcons made history by winning the inaugural Esports World Cup Club Championship in Riyadh, marking a major milestone for Saudi esports."
+msgstr "صنع فريق فالكونز التاريخ بفوزه بلقب بطولة الأندية في النسخة الأولى من كأس العالم للرياضات الإلكترونية في الرياض، محققًا إنجازًا بارزًا للرياضات الإلكترونية السعودية."
+
+
+# ==========================================
+# ACHIEVEMENT 2 - EWC 2025
+# ==========================================
+
+msgid "Team Falcons defended their Esports World Cup Club Championship title, securing back-to-back victories on the global stage."
+msgstr "نجح فريق فالكونز في الدفاع عن لقبه ببطولة الأندية في كأس العالم للرياضات الإلكترونية، محققًا اللقب للعام الثاني على التوالي على الساحة العالمية."
+
+
+# ==========================================
+# ACHIEVEMENT 3 - FIFAe 2024
+# ==========================================
+
+msgid "Saudi Arabia celebrated an international Rocket League world title at the FIFAe World Cup 2024."
+msgstr "احتفلت المملكة العربية السعودية بتحقيق لقب عالمي في لعبة روكيت ليق خلال كأس العالم لكرة القدم الإلكترونية 2024."
+
+
+# ==========================================
+# ACHIEVEMENT 4 - RLCS RALEIGH 2025
+# ==========================================
+
+msgid "Team Falcons captured the RLCS Raleigh Major 2025 trophy, adding another prestigious international Rocket League title to Saudi esports history."
+msgstr "تُوّج فريق فالكونز بلقب بطولة روكيت ليق الكبرى في رالي 2025، مضيفًا لقبًا دوليًا مرموقًا آخر إلى تاريخ الرياضات الإلكترونية السعودية."
+
+
+# ==========================================
+# ACHIEVEMENT 5 - OVERWATCH 2023
+# ==========================================
+
+msgid "Saudi Arabia made history by winning the Overwatch World Cup 2023 after defeating China in a thrilling grand final, securing a historic world title for Saudi esports."
+msgstr "صنعت المملكة العربية السعودية التاريخ بفوزها بكأس العالم لأوفرواتش 2023 بعد تغلبها على الصين في نهائي مثير، لتحقق لقبًا عالميًا تاريخيًا للرياضات الإلكترونية السعودية."
+
+
+# ==========================================
+# ACHIEVEMENT 6 - FIFAe 2025
+# ==========================================
+
+msgid "Saudi Arabia reached the FIFAe World Cup 2025 Rocket League grand final and finished as world runner-up, adding another major international achievement to the nation's esports history."
+msgstr "وصلت المملكة العربية السعودية إلى نهائي كأس العالم لكرة القدم الإلكترونية 2025 في لعبة روكيت ليق، وأنهت البطولة في مركز الوصيف عالميًا، مضيفة إنجازًا دوليًا جديدًا إلى تاريخ الرياضات الإلكترونية السعودية."

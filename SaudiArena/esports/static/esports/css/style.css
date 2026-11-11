@@ -1724,28 +1724,42 @@ button:focus-visible {
     border-color: var(--accent);
 }
 
+/* ==========================================
+   TEAM LOGOS - FIXED DESIGN
+   ========================================== */
+
 .directory-team-logo {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 190px;
     background: linear-gradient(135deg, #1d1238, #402276);
+    overflow: hidden;
 }
+
 
 .directory-team-logo img {
     width: 125px;
     height: 125px;
     object-fit: contain;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
 }
 
 .directory-team-logo span {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100px;
-    height: 100px;
+
+    width: 112px;
+    height: 112px;
+
     border: 2px solid #a78bfa;
-    border-radius: 50%;
+    border-radius: 20px;
+
     color: #ffffff;
     font-family: "Rajdhani", sans-serif;
     font-size: 42px;
@@ -2716,35 +2730,67 @@ button:focus-visible {
     letter-spacing: 1px;
 }
 
+
 .teams-pro-emblem {
     position: absolute;
     bottom: 20px;
     left: 24px;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     width: 76px;
     height: 76px;
+
+    padding: 0;
     border: 2px solid #a78bfa;
     border-radius: 15px;
-    background: rgba(20,10,44,0.9);
+
+    background: rgba(20, 10, 44, 0.9);
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+
+.teams-pro-emblem {
+    position: absolute;
+    bottom: 20px;
+    left: 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 70px;
+    height: 70px;
+
+    padding: 0;
+    margin: 0;
+
+    border: 2px solid #a78bfa;
+    border-radius: 8px;
+
+    background: transparent;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
 .teams-pro-emblem img {
-    width: 65px;
-    height: 65px;
-    object-fit: contain;
-}
+    display: block;
 
-.teams-pro-emblem span {
-    color: #fff;
-    font-family: "Rajdhani", sans-serif;
-    font-size: 40px;
-    font-weight: 700;
-}
+    width: 100%;
+    height: 100%;
 
-.teams-pro-card-body {
-    padding: 28px;
+    padding: 0;
+    margin: 0;
+
+    object-fit: fill;
+    border: 0;
+    border-radius: 5px;
+    background: transparent;
+    box-shadow: none;
+    box-sizing: border-box;
 }
 
 .teams-pro-card-category {
@@ -4944,3 +4990,69 @@ html[lang="ar"] .sa-about-ending h2 {
     }
 }
 
+
+/* FIX TEAM CARD TEXT LAYOUT */
+
+.teams-pro-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 36px;
+}
+
+.teams-pro-card {
+    min-width: 0;
+    overflow: hidden;
+}
+
+.teams-pro-card-body {
+    padding: 36px 40px;
+    text-align: right;
+    box-sizing: border-box;
+}
+
+.teams-pro-card-category,
+.teams-pro-card-body h3,
+.teams-pro-card-body p {
+    max-width: 100%;
+    overflow-wrap: break-word;
+}
+
+.teams-pro-card-body h3 {
+    margin: 18px 0;
+    line-height: 1.3;
+}
+
+.teams-pro-card-body p {
+    line-height: 1.9;
+}
+
+@media (max-width: 1100px) {
+    .teams-pro-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 700px) {
+    .teams-pro-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .teams-pro-card-body {
+        padding: 28px 24px;
+    }
+}
+
+/* GAMES VIDEO CARDS */
+
+.games-card-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.games-card-image video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
